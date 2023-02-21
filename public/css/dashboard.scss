@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 0.875rem;
+}
+p,
+label {
+    color: #333;
+    font-weight: 500;
+}
+$primary-color: #7f1619;
+$secondary-color: rgba(217, 217, 217, 0.5);
+$btn-font-size: 1rem;
+//  text colors
+.text-primary {
+    color: $primary-color !important;
+}
+// backgrounds colors
+.bg-primary {
+    background-color: $primary-color !important;
+}
+.bg-secondary {
+    background-color: $secondary-color !important;
+}
+// border colors
+.border-primary {
+    border-color: $primary-color !important;
+}
+
+.btn-default {
+    padding: 8px 16px;
+    font-size: $btn-font-size;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid $primary-color;
+    color: #fff;
+    background-color: $primary-color;
+    transition: background-color 0.6s ease;
+    &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+    }
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+    }
+}
+.btn-search {
+    position: absolute;
+    padding: 8px 16px;
+    color: rgba(29, 21, 22, 0.25);
+    right: 0;
+    bottom: 0;
+    &:hover {
+        color: $primary-color;
+    }
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+    }
+}
+.search-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+        width: 100%;
+        padding: 8px 16px;
+        font-size: $btn-font-size;
+        border-radius: 40px;
+        border: 1px solid rgba(217, 217, 217, 0.75);
+        color: #fff;
+        background: rgba(217, 217, 217, 0.75);
+        &:hover {
+            border: 1px solid $primary-color;
+        }
+        &:focus {
+            background: rgba(217, 217, 217, 0.75) !important;
+            border: 1px solid $primary-color;
+            outline: none !important;
+            box-shadow: none;
+        }
+    }
+}
+.page-link {
+    color: $primary-color;
+    &:hover {
+        color: #fff;
+        background-color: $primary-color;
+    }
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+        color: #fff;
+        background-color: $primary-color;
+    }
+}
+.form-check-input[type="radio"]:checked {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+    }
+}
+/*
+   * Sidebar
+   */
+
+.sidebar {
+    //     // position: fixed;
+    //     top: 0;
+    //     /* rtl:raw:
+    //     right: 0;
+    //     */
+    //     bottom: 0;
+    //     /* rtl:remove */
+    //     left: 0;
+    //     z-index: 100; /* Behind the navbar */
+    padding: 0 0 0; /* Height of navbar */
+    //     // box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-sticky {
+    height: calc(100vh - 48px);
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link.active {
+    color: #2470dc;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+}
+
+/*
+   * Navbar
+   */
+
+.navbar-brand {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar .navbar-toggler {
+    top: 0.25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: 0.75rem 1rem;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+.sidebar {
+    background: rgba(217, 217, 217, 0.5);
+}
+.admin {
+    border-left: 4px solid #7f1619;
+    background: #b0aeae;
+}
+.perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+.procurar {
+    input,
+    button {
+        background: #d9d9d9;
+        border: 2px solid #d9d9d9;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    input:focus {
+        outline: none !important;
+        border: #7f1619 2px solid;
+        box-shadow: none;
+        background: #d9d9d9;
+    }
+}
+.user {
+    color: #7f1619;
+}
+.square {
+    width: 150px;
+    height: 150px;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    box-shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+
+    p {
+        word-break: break-all;
+        font-size: 1.3rem;
+        color: #7f1619;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+.content {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-escondida {
+    display: none;
+}
+.nav-link.active {
+    color: #7f1619 !important;
+}
+.menu {
+    background: rgba(217, 217, 217, 0.7);
+    padding: 0;
+}
+#menu {
+    padding-bottom: 0 !important;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    background-color: #d9d9d9;
+}
+.navbar-menu {
+    width: 100%;
+    display: flex;
+}
+.menu-nav {
+    width: 100%;
+}
+
+.menu-link {
+    font-size: 20px;
+    color: #000;
+}
+.solicitacao {
+    p {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+}
+.comunicado {
+    height: 231px;
+    border-radius: 10px;
+    p {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}
+
+// Pagina de cadastrar usuario
+
+.multistep-container {
+    position: relative;
+}
+
+.multistep-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.multistep-steps {
+    margin-top: 20px;
+}
+
+.multistep-step {
+    display: none;
+}
+
+.multistep-step.active {
+    display: block;
+}
+
+.multistep-step h3 {
+    margin-top: 0;
+}
+
+.multistep-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.multistep-navigation-button {
+    background-color: #7f1619;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.multistep-navigation-button:disabled {
+    background-color: #e5e5e5;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.multistep-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    margin: 0 5px;
+}
+
+.multistep-status.active {
+    background-color: $primary-color;
+}
+.form-check-input:focus,
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.user-card {
+    .name-card {
+        background: #d9d9d9;
+        padding: 5px;
+        font-weight: 500;
+    }
+    .perfil {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    .dados-pessoais {
+        font-weight: 500;
+        color: #333;
+        span {
+            color: $primary-color;
+        }
+    }
+}
+
+.btn-animais {
+    width: 200px;
+    height: 200px;
+    background: $primary-color;
+    color: #fff;
+    border: 2px solid $primary-color;
+    border-radius: 20px;
+    padding: 25px 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25), 5px 4px 4px rgba(0, 0, 0, 0.25),
+        5px 4px 4px rgba(0, 0, 0, 0.25), 5px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: #fff;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+    }
+}
+
+.nav .nav-item .active {
+    border-left: #7f1619 3px solid;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.perfil-conf {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 10px;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+.upload {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    color: $primary-color;
+}

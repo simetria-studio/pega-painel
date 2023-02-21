@@ -1,0 +1,31 @@
+<?php
+
+use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
+
+
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::prefix('dashboard')->group(function () {
+    route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
+    route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
+    route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
+    route::get('usuario', [DashboardController::class, 'usuario'])->name('usuario');
+
+    route::prefix('usuario')->group(function () {
+        route::get('user-animais', [DashboardController::class, 'userAnimais'])->name('user-animais');
+        route::get('dados-pessoais', [DashboardController::class, 'dadosPessoais'])->name('dados-pessoais');
+    });
+
+    route::get('animais', [DashboardController::class, 'animais'])->name('animais');
+    route::prefix('animais')->group(function () {
+        route::get('consultar-animais', [DashboardController::class, 'consultarAnimais'])->name('consultar-animais');
+        route::get('informacoes', [DashboardController::class, 'informacoesAnimal'])->name('informacoes-animal');
+        route::get('cadastrar', [DashboardController::class, 'cadastrarAnimal'])->name('cadastrar-animal');
+    });
+
+    route::get('anuncio', [DashboardController::class, 'anuncio'])->name('anuncio');
+    route::get('permissoes', [DashboardController::class, 'permissoes'])->name('permissoes');
+    route::get('financeiro', [DashboardController::class, 'financeiro'])->name('financeiro');
+    route::get('configuracoes', [DashboardController::class, 'configuracoes'])->name('configuracoes');
+});
