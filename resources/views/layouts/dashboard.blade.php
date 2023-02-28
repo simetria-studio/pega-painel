@@ -44,7 +44,7 @@
                                 <img src="{{ asset('img/user-default.png') }}" alt="Logo">
                             </div>
                             <div>
-                                <span>Nome do Admin</span>
+                                <span>{{ auth()->user()->name }}</span>
                             </div>
                         </div>
                         <form action="">

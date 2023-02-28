@@ -124,7 +124,7 @@ class DashboardController extends Controller
     }
     public function consultarAnimais()
     {
-        return view('dashboard.animais.animais');
+      
     }
     public function informacoesAnimal()
     {
