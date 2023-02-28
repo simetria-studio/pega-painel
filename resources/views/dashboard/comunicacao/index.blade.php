@@ -6,7 +6,7 @@
         <h1 class="h3">Comunicações</h1>
     </div>
     <div class="row justify-content-center">
-        <div class="col-8 mt-5 menu">
+        <div class="col-10 mt-5 menu">
             <nav class="navbar mb-3 navbar-expand" id="menu">
                 <ul class="navbar-nav  mx-auto">
                     <li class="nav-item menu-item">

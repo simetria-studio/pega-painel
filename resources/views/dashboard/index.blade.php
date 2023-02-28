@@ -9,12 +9,16 @@
     <div class="row">
         <div class="col-8 mx-auto">
             <div class="row text-center">
+
                 <div class="col-3 gap-3 ">
-                    <p class="h5">Animais Cadastrados</p>
+                    <div class="content">
+                        <p class="h5">Animais Cadastrados</p>
+                    </div>
                     <div class="square">
                         <p>0000</p>
                     </div>
                 </div>
+
                 <div class="col-3 gap-3">
                     <div class="content">
                         <p class="h5">Cadastros</p>
@@ -23,6 +27,7 @@
                         <p>0000</p>
                     </div>
                 </div>
+
                 <div class="col-3 gap-3">
                     <div class="content">
                         <p class="h5">Acessos Ecommerce</p>
@@ -31,6 +36,7 @@
                         <p>0000</p>
                     </div>
                 </div>
+
                 <div class="col-3 gap-3">
                     <div class="content">
                         <p class="h5">Acessos App</p>

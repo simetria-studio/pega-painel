@@ -1,12 +1,17 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
 
-
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::prefix('dashboard')->group(function () {
     route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
     route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
