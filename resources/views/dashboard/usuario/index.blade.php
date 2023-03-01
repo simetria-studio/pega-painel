@@ -46,7 +46,7 @@
                                 cadastrados</a>
                         </div>
                         <div class="mb-2">
-                            <a href="{{ route('dados-pessoais') }}" type="button" class="btn btn-default">Mais
+                            <a href="{{ route('dados.pessoais', $pessoa->id) }}" type="button" class="btn btn-default">Mais
                                 informações</a>
                         </div>
                     </div>
