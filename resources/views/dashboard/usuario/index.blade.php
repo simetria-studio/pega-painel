@@ -42,7 +42,7 @@
                             <p class="">Tipo de usuário: <span>Não definido</span></p>
                         </div>
                         <div class="mb-2">
-                            <a href="{{ route('user-animais') }}" type="button" class="btn btn-default">Animais
+                            <a href="{{ route('user.animais', $pessoa->id) }}" type="button" class="btn btn-default">Animais
                                 cadastrados</a>
                         </div>
                         <div class="mb-2">

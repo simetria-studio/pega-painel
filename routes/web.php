@@ -20,7 +20,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     route::get('usuario', [PessoasController::class, 'index'])->name('usuario');
 
     route::prefix('usuario')->group(function () {
-        route::get('user-animais', [DashboardController::class, 'userAnimais'])->name('user-animais');
+        route::get('user-animais/{id}', [PessoasController::class, 'animais'])->name('user.animais');
         route::get('dados-pessoais/{id}', [PessoasController::class, 'show'])->name('dados.pessoais');
     });
 
