@@ -10,4 +10,10 @@ class Owner extends Model
     use HasFactory;
 
     protected $table = 'srg_pessoa';
+
+   public function getAdress()
+   {
+         return $this->hasOne(Endereco::class, 'pessoa', 'id');
+   }
+
 }

@@ -97,13 +97,6 @@ class DashboardController extends Controller
 
 
 
-
-
-    public function usuario()
-    {
-        return view('dashboard.usuario.index');
-    }
-
     public function userAnimais()
     {
         return view('dashboard.usuario.animais');

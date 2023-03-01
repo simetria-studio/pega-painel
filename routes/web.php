@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AnimaisController;
+use App\Http\Controllers\Admin\PessoasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -16,7 +17,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
     route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
-    route::get('usuario', [DashboardController::class, 'usuario'])->name('usuario');
+    route::get('usuario', [PessoasController::class, 'index'])->name('usuario');
 
     route::prefix('usuario')->group(function () {
         route::get('user-animais', [DashboardController::class, 'userAnimais'])->name('user-animais');
