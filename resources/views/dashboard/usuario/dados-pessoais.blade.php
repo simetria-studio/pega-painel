@@ -57,7 +57,7 @@
                     <div class="col-4 mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
                         <div class="rounded bg-light w-100 p-2" id="telefone">
-                            <span>{{ $pessoa->telefone }}</span>
+                            <span>{{ $pessoa->telefone ?? 'Não possuí' }}</span>
                         </div>
                     </div>
                     <div class="col-4 mb-3">
