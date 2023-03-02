@@ -27,11 +27,13 @@
         <div class="">
             <div class="painel">
                 <nav id="sidebarMenu" class=" d-md-block sidebar">
-                    <div class="logo-space">
-                        <div class="logo">
-                            <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
+                    <a href="{{ route('home') }}">
+                        <div class="logo-space">
+                            <div class="logo">
+                                <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="admin p-2 ">
                         <div class="d-flex mx-2 align-items-center mb-3">
                             <div class="perfil">
