@@ -8,7 +8,7 @@
                     <div class="logo">
                         <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
                     </div>
-                    <div class="bem-vindo">
+                    <div class="bem-vindo ">
                         <p>Bem vindo ao nosso sistema JPêga, faça login para continuar</p>
                     </div>
                 </div>
