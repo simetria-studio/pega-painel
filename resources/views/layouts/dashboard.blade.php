@@ -35,14 +35,16 @@
                     <div class="admin p-2 ">
                         <div class="d-flex mx-2 align-items-center mb-3">
                             <div class="perfil">
-                                <img src="{{ asset('img/user-default.png') }}" alt="Logo">
+                                <img id="img-hover" class="profile-img"
+                                    src="https://ui-avatars.com/api/?size=512&amp;background=71191c&amp;color=fff&amp;name={{ auth()->user()->name }}"
+                                    alt="">
                             </div>
                             <div>
                                 <span>{{ auth()->user()->name }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="position-sticky pt-3 sidebar-sticky">
+                    <div class="position-sticky pt-3 sidebar-sticky painel-menu">
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link " href="{{ route('comunicacao') }}">Comunicações</a>
@@ -100,7 +102,7 @@
                 </nav>
                 <main class="">
                     <div class="top">
-                        <div >
+                        <div>
                             <a href="{{ route('logout') }}" class="sair"
                                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
