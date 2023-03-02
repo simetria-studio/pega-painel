@@ -39,7 +39,7 @@
                             <p class="mb-0">Tipo de reprodução: <span>{{ $animal->doador }}</span></p>
                         </div>
                         <div class="my-2">
-                            <a href="{{ route('informacoes-animal') }}" type="button" class="btn btn-default">Mais
+                            <a href="{{ route('informacoes.animal', $animal->id) }}" type="button" class="btn btn-default">Mais
                                 informações</a>
                         </div>
                     </div>

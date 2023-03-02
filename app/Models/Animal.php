@@ -28,4 +28,16 @@ class Animal extends Model
     {
         return $this->hasOne(Owner::class, 'id', 'proprietario');
     }
+    public function getCreator()
+    {
+        return $this->hasOne(Owner::class, 'id', 'criador');
+    }
+    public function getFazenda()
+    {
+        return $this->hasOne(Fazenda::class, 'id', 'fazenda_nascimento');
+    }
+    public function getPelagem()
+    {
+        return $this->hasOne(Pelagem::class, 'id', 'pelagem');
+    }
 }

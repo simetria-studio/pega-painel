@@ -27,7 +27,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     route::get('animais', [DashboardController::class, 'animais'])->name('animais');
     route::prefix('animais')->group(function () {
         route::get('consultar-animais', [AnimaisController::class, 'animais'])->name('consultar.animais');
-        route::get('informacoes', [DashboardController::class, 'informacoesAnimal'])->name('informacoes-animal');
+        route::get('informacoes/{id}', [AnimaisController::class, 'show'])->name('informacoes.animal');
         route::get('cadastrar', [DashboardController::class, 'cadastrarAnimal'])->name('cadastrar-animal');
     });
 
