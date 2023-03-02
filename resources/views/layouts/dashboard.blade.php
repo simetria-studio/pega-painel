@@ -23,30 +23,15 @@
 
 <body>
     <div id="app">
-        <header class="top">
-            <div class="space-logo">
-                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 logo" href="#">
-                    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
-                </a>
-            </div>
-            <div class="navbar-nav">
-                <div class="nav-item ">
-                    <a class="nav-link px-3 sair" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
 
-                </div>
-            </div>
-        </header>
-
-        <div class="container-fluid">
-            <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar">
+        <div class="">
+            <div class="painel">
+                <nav id="sidebarMenu" class=" d-md-block sidebar">
+                    <div class="logo-space">
+                        <div class="logo">
+                            <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
+                        </div>
+                    </div>
                     <div class="admin p-2 ">
                         <div class="d-flex mx-2 align-items-center mb-3">
                             <div class="perfil">
@@ -56,14 +41,6 @@
                                 <span>{{ auth()->user()->name }}</span>
                             </div>
                         </div>
-                        <form action="">
-                            <div class="input-group procurar mb-3">
-                                <input type="text" class="form-control" placeholder="Procurar...">
-                                {{-- <button class="btn" type="button">
-                                    <span data-feather="search"></span>
-                                </button> --}}
-                            </div>
-                        </form>
                     </div>
                     <div class="position-sticky pt-3 sidebar-sticky">
                         <ul class="nav flex-column">
@@ -121,10 +98,22 @@
                         </ul>
                     </div>
                 </nav>
-
-                <main class="col-md-9  col-lg-10 px-md-4">
-                    @yield('content')
-
+                <main class="">
+                    <div class="top">
+                        <div >
+                            <a href="{{ route('logout') }}" class="sair"
+                                onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                    <div class="px-md-4">
+                        @yield('content')
+                    </div>
                 </main>
             </div>
         </div>

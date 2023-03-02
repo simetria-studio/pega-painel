@@ -17,8 +17,8 @@
                     <div class="row justify-content-center inputs card-login">
                         <div class="mb-3">
                             <input id="email" type="email"
-                                class="form-control rounded-4 @error('email') is-invalid @enderror"
-                                name="email" required placeholder="Login">
+                                class="form-control rounded-4 @error('email') is-invalid @enderror" name="email" required
+                                placeholder="Login">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -28,8 +28,8 @@
 
                         <div class="mb-3">
                             <input id="password" type="password"
-                                class="form-control  rounded-4 @error('password') is-invalid @enderror"
-                                name="password" placeholder="Senha">
+                                class="form-control  rounded-4 @error('password') is-invalid @enderror" name="password"
+                                placeholder="Senha">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -52,6 +52,43 @@
 @section('js')
     <script>
         $(document).ready(function() {
+            $(document).keypress(function(e) {
+                if (e.which == 13) {
+                    var email = $('#email').val();
+                    var password = $('#password').val();
+                    $.ajax({
+                        url: "{{ route('login') }}",
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            email: email,
+                            password: password
+                        },
+                        beforeSend: function() {
+                            Swal.fire({
+                                title: 'Aguarde...',
+                                html: 'Estamos verificando suas credenciais',
+                                allowOutsideClick: false,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                },
+                            })
+                        },
+                        success: function(response) {
+                            if (response) {
+                                window.location = "{{ route('home') }}";
+                            }
+                        },
+                        error: function(response) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Login ou senha incorretos!',
+                            })
+                        }
+                    });
+                }
+            });
             $('#btnLogin').click(function() {
                 var email = $('#email').val();
                 var password = $('#password').val();

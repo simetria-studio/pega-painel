@@ -474,18 +474,20 @@ $btn-font-size: 1rem;
     color: $primary-color;
 }
 
+.painel{
+    display: grid;
+    grid-template-columns: 16% 84%;
+}
 .top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #424242;
+    background: #0f0e0ecb;
+    justify-content: end;
+    padding: 20px 0;
+}
 
-    .space-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-    }
+.logo-space {
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
@@ -515,8 +517,5 @@ $btn-font-size: 1rem;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-
-    &:hover {
-        background: #7f1619;
-    }
+    transition: all 0.3s ease-in-out;
 }
