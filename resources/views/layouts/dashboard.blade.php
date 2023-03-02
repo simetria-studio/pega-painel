@@ -8,8 +8,13 @@
     <title>@yield('title')</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/0ab2bcde1c.js" crossorigin="anonymous"></script>
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/dashboard.min.css') }}">
@@ -18,14 +23,18 @@
 
 <body>
     <div id="app">
-        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">ABCJPega</a>
+        <header class="top">
+            <div class="space-logo">
+                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 logo" href="#">
+                    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid">
+                </a>
+            </div>
             <div class="navbar-nav">
                 <div class="nav-item ">
-                    <a class="nav-link px-3" href="{{ route('logout') }}"
+                    <a class="nav-link px-3 sair" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Desconectar') }}
+                        <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
