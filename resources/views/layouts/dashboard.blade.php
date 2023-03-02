@@ -39,7 +39,7 @@
                                     src="https://ui-avatars.com/api/?size=512&amp;background=71191c&amp;color=fff&amp;name={{ auth()->user()->name }}"
                                     alt="">
                             </div>
-                            <div>
+                            <div class="user-name">
                                 <span>{{ auth()->user()->name }}</span>
                             </div>
                         </div>
