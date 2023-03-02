@@ -139,12 +139,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
     @yield('js')
-    <script>
-        $(document).ready(function() {
-            var url = window.location.href;
-            $('ul.nav a[href="' + url + '"]').addClass('active');
-        });
-    </script>
+   
 </body>
 
 </html>

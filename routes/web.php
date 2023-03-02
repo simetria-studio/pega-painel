@@ -22,6 +22,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     route::prefix('usuario')->group(function () {
         route::get('user-animais/{id}', [PessoasController::class, 'animais'])->name('user.animais');
         route::get('dados-pessoais/{id}', [PessoasController::class, 'show'])->name('dados.pessoais');
+        route::post('filtro', [PessoasController::class, 'filtro'])->name('filtro');
     });
 
     route::get('animais', [DashboardController::class, 'animais'])->name('animais');

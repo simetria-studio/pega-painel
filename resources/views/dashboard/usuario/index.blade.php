@@ -8,7 +8,7 @@
     <div class="col-6 mx-auto mb-5">
         <form>
             <div class="search-group mb-3">
-                <input type="text" class="form-control" placeholder="Pesquisar por nome, CPF ou CNPJ do usuário:">
+                <input type="text" class="form-control filter" placeholder="Pesquisar por nome, CPF ou CNPJ do usuário:">
                 <a role="button" class="nav-link btn-search" type="button">
                     <iconify-icon icon="fa6-solid:magnifying-glass" width="20" height="20"></iconify-icon>
                 </a>
@@ -16,9 +16,8 @@
         </form>
     </div>
 
-    <div class="col-10 mx-auto ">
+    <div class="col-10 mx-auto users">
         @foreach ($pessoas as $pessoa)
-     
             <div class="bg-secondary user-card mb-3">
                 <div class="text-center name-card">
                     <span class="fs-5 text-primary">{{ $pessoa->nome }}</span>
@@ -42,7 +41,8 @@
                             <p class="">Tipo de usuário: <span>Não definido</span></p>
                         </div>
                         <div class="mb-2">
-                            <a href="{{ route('user.animais', $pessoa->id) }}" type="button" class="btn btn-default">Animais
+                            <a href="{{ route('user.animais', $pessoa->id) }}" type="button"
+                                class="btn btn-default">Animais
                                 cadastrados</a>
                         </div>
                         <div class="mb-2">
@@ -60,4 +60,25 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('.filter').on('keyup', function() {
+                var searchTerm = $(this).val().toLowerCase();
+                $.ajax({
+                    url: "{{ route('filtro') }}",
+                    method: 'post',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        nome: searchTerm
+                    },
+                    success: function(data) {
+                        $('.users').html(data[0].view);
+                    }
+
+                });
+            });
+        });
+    </script>
 @endsection

@@ -27,7 +27,16 @@ class PessoasController extends Controller
     public function animais($id)
     {
         $animais = Animal::where('proprietario', $id)->with('getOwner')->paginate(10);
-  
+
         return view('dashboard.usuario.animais', get_defined_vars());
+    }
+
+    public function filtro(Request $request)
+    {
+        if ($request->ajax()) {
+            $pessoas = Owner::with('getAdress')->where('nome', 'like', '%' . $request->nome . '%')->get();
+            $view = view('dashboard.usuario.includes.filter', get_defined_vars())->render();
+            return response()->json([get_defined_vars()]);
+        }
     }
 }
