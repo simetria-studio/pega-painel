@@ -34,7 +34,7 @@ class PessoasController extends Controller
     public function filtro(Request $request)
     {
         if ($request->ajax()) {
-            $pessoas = Owner::with('getAdress')->where('nome', 'like', '%' . $request->nome . '%')->get();
+            $pessoas = Owner::with('getAdress')->where('nome', 'like', '%' . $request->nome . '%')->orWhere('cpf', 'like', '%' . $request->nome . '%')->orWhere('cnpj', 'like', '%' . $request->nome . '%')->get();
             $view = view('dashboard.usuario.includes.filter', get_defined_vars())->render();
             return response()->json([get_defined_vars()]);
         }
