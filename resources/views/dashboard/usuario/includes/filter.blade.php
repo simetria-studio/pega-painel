@@ -16,18 +16,22 @@
             </div>
         </div>
 
-        <div>
+        <div class="btns">
             <div class="dados-pessoais">
                 <p class="mb-0">Telefone: <span> {{ $pessoa->whatsapp }}</span> </p>
                 <p class="">Tipo de usuário: <span>Não definido</span></p>
             </div>
             <div class="mb-2">
-                <a href="{{ route('user.animais', $pessoa->id) }}" type="button" class="btn btn-default">Animais
-                    cadastrados</a>
+                <a href="href="{{ route('user.animais', $pessoa->id) }}> <button type="button"
+                        class="btn btn-default">Animais
+                        cadastrados</button></a>
             </div>
             <div class="mb-2">
-                <a href="{{ route('dados.pessoais', $pessoa->id) }}" type="button" class="btn btn-default">Mais
-                    informações</a>
+                <a href="{{ route('dados.pessoais', $pessoa->id) }}"> <button type="button" class="btn btn-default">Mais
+                        informações</button></a>
+            </div>
+            <div class="mb-2">
+                <button href="#" type="button" class="btn btn-default">Criar Acesso</button>
             </div>
         </div>
     </div>

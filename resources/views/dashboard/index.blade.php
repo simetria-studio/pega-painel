@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h3">Bem vindo! <strong class="user">usuario</strong></h1>
+        <h1 class="h3">Bem vindo! <strong class="user">{{ auth()->user()->name }}</strong></h1>
     </div>
     <div class="row">
         <div class="col-8 mx-auto">
