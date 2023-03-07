@@ -42,10 +42,10 @@
             </div>
             <div class="d-flex justify-content-around">
                 <div class="mb-3">
-                    <button class="btn btn-lg btn-light shadow">Exames <strong>+</strong></button>
+                    <button class="btn btn-lg btn-light shadow">DNA <strong>+</strong></button>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-lg btn-light shadow">Vacinas <strong>+</strong></button>
+                    <button class="btn btn-lg btn-light shadow">EXPORTAR <strong>+</strong></button>
                 </div>
 
             </div>

@@ -1,19 +1,21 @@
 <?php
 
-use App\Http\Controllers\Admin\AnimaisController;
-use App\Http\Controllers\Admin\PessoasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\AnimaisController;
+use App\Http\Controllers\Admin\PessoasController;
+use App\Http\Controllers\Admin\Auth\AdAuthController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-
-Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
 
+Route::post('admin/login', [AdAuthController::class, 'login'])->name('admin.login.post');
+
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
     route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
@@ -36,4 +38,6 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     route::get('permissoes', [DashboardController::class, 'permissoes'])->name('permissoes');
     route::get('financeiro', [DashboardController::class, 'financeiro'])->name('financeiro');
     route::get('configuracoes', [DashboardController::class, 'configuracoes'])->name('configuracoes');
+
+    route::any('logout-admin', [AdAuthController::class, 'logout'])->name('admin.logout');
 });

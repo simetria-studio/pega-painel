@@ -57,7 +57,7 @@
                     var email = $('#email').val();
                     var password = $('#password').val();
                     $.ajax({
-                        url: "{{ route('login') }}",
+                        url: "{{ route('admin.login.post') }}",
                         type: "POST",
                         data: {
                             _token: "{{ csrf_token() }}",
@@ -93,7 +93,7 @@
                 var email = $('#email').val();
                 var password = $('#password').val();
                 $.ajax({
-                    url: "{{ route('login') }}",
+                    url: "{{ route('admin.login.post') }}",
                     type: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
@@ -111,7 +111,8 @@
                         })
                     },
                     success: function(response) {
-                        if (response) {
+
+                        if (response.message == 'Authorized') {
                             window.location = "{{ route('home') }}";
                         }
                     },
