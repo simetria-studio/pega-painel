@@ -91,9 +91,8 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">CNPJ</label>
-                       <select name="" id="" class="form-control">
-                            <option value="">{{ $pessoa->cnpj }}</option>
-                       </select>
+                        <input type="text" class="form-control" value="{{ $pessoa->cnpj }}">
+                     
                     </div>
                     <div class="text-center">
                         <button class="btn btn-pega">Salvar</button>
