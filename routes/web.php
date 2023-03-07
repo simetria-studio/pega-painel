@@ -21,10 +21,11 @@ Route::middleware(['auth:admin'])->group(function () {
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
     route::get('usuario', [PessoasController::class, 'index'])->name('usuario');
 
-    route::prefix('usuario')->group(function () {
+    route::prefix('owners')->group(function () {
         route::get('user-animais/{id}', [PessoasController::class, 'animais'])->name('user.animais');
         route::get('dados-pessoais/{id}', [PessoasController::class, 'show'])->name('dados.pessoais');
         route::post('filtro', [PessoasController::class, 'filtro'])->name('filtro');
+        route::get('edit/{id}', [PessoasController::class, 'edit'])->name('owner.edit');
     });
 
     route::get('animais', [DashboardController::class, 'animais'])->name('animais');

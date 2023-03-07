@@ -40,7 +40,9 @@
                     <div class="btns">
                         <div class="dados-pessoais">
                             <div class="mb-2">
-                                <button href="#" type="button" class="btn btn-default"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
+                                <a href="{{ route('owner.edit', $pessoa->id) }}"> <button type="button"
+                                        class="btn btn-default"><i class="fa-solid fa-pen-to-square"></i>
+                                        Editar</button></a>
                             </div>
                         </div>
                         <div class="mb-2">
@@ -54,7 +56,8 @@
                                     informações</button></a>
                         </div>
                         <div class="mb-2">
-                            <button href="#" type="button" class="btn btn-default"><i class="fa-solid fa-lock"></i> Criar Acesso</button>
+                            <button href="#" type="button" class="btn btn-default"><i class="fa-solid fa-lock"></i>
+                                Criar Acesso</button>
                         </div>
                     </div>
                 </div>

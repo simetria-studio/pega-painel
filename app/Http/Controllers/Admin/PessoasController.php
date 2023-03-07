@@ -39,4 +39,10 @@ class PessoasController extends Controller
             return response()->json([get_defined_vars()]);
         }
     }
+    public function edit($id)
+    {
+        $pessoa = Owner::with('getAdress')->find($id);
+        $estado = AuxEstado::where('id', $pessoa->getAdress->estado)->first();
+        return view('dashboard.usuario.edit', get_defined_vars());
+    }
 }

@@ -565,3 +565,39 @@ $btn-font-size: 1rem;
     }
 }
 
+.btn-pega {
+    background: #71191c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: #fff;
+        color: #71191c;
+        border: 2px solid #71191c;
+    }
+}
+
+.btn-voltar {
+    background: #71191c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1em;
+
+    &:hover {
+        background: #fff;
+        color: #71191c;
+        border: 2px solid #71191c;
+    }
+}
