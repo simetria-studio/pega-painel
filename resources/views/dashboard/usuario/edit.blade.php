@@ -30,24 +30,29 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Data de nascimento</label>
-                            <input type="text" class="form-control" name="data_nascimento" value="{{ $pessoa->data_nascimento }}">
+                            <input type="text" class="form-control" name="data_nascimento"
+                                value="{{ $pessoa->data_nascimento }}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Sexo</label>
                             <select name="sexo" id="" class="form-control">
-                                <option value="">Selecione</option>
-                                <option value="">Masculino</option>
-                                <option value="">Feminino</option>
+                                <option>Selecione</option>
+                                <option value="M" @if ($pessoa->sexo == 'M') selected @endif>Masculino</option>
+                                <option value="F" @if ($pessoa->sexo == 'F') selected @endif>Feminino</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Estado civil</label>
                             <select name="estado_civil" id="" class="form-control">
                                 <option value="">Selecione</option>
-                                <option value="">Solteiro</option>
-                                <option value="">Casado</option>
-                                <option value="">Divorciado</option>
-                                <option value="">Viúvo</option>
+                                <option value="solteiro" @if ($pessoa->estado_civil == 'solteiro') selected @endif>Solteiro</option>
+                                <option value="casado" @if ($pessoa->estado_civil == 'casado') selected @endif>Casado</option>
+                                <option value="divorciado" @if ($pessoa->estado_civil == 'divorciado') selected @endif>Divorciado
+                                </option>
+                                <option value="viuvo" @if ($pessoa->estado_civil == 'viuvo') selected @endif>Viúvo</option>
+                                <option value="desquitado" @if ($pessoa->estado_civil == 'desquitado') selected @endif>Desquitado
+                                </option>
+                                <option value="outros" @if ($pessoa->estado_civil == 'outros') selected @endif>Outros</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -66,8 +71,8 @@
                             <label for="">Tipo de pessoa</label>
                             <select name="tipo_pessoa" id="" class="form-control">
                                 <option value="">Selecione</option>
-                                <option value="">Física</option>
-                                <option value="">Jurídica</option>
+                                <option value="pf" @if ($pessoa->tipo_pessoa == 'pf') selected @endif>Física</option>
+                                <option value="pj" @if ($pessoa->tipo_pessoa == 'pj') selected @endif>Jurídica</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -80,11 +85,13 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Cidade de nascimento</label>
-                            <input type="text" class="form-control" value="{{ $pessoa->cidade_nascimento }}" name="cidade_nascimento">
+                            <input type="text" class="form-control" value="{{ $pessoa->cidade_nascimento }}"
+                                name="cidade_nascimento">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Nome do conjuguê</label>
-                            <input type="text" class="form-control" value="{{ $pessoa->conjugue_nome }}" name="conjugue_nome">
+                            <input type="text" class="form-control" value="{{ $pessoa->conjugue_nome }}"
+                                name="conjugue_nome">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Profissão</label>

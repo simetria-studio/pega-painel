@@ -54,6 +54,8 @@ class Owner extends Model
             'data_ultima_atualizacao_cadastral',
       ];
 
+      
+
       public function getAdress()
       {
             return $this->hasOne(Endereco::class, 'pessoa', 'id');

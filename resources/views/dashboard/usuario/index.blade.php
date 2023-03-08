@@ -33,7 +33,7 @@
                             <p class="mb-0">CEP: <span>{{ $pessoa->getAdress->cep }}</span> </p>
                             <p class="mb-0">Endereço: <span>{{ $pessoa->getAdress->endereco }}</span> </p>
                             <p class="mb-0">Telefone: <span> {{ $pessoa->whatsapp }}</span> </p>
-                            <p class="">Tipo de usuário: <span>Não definido</span></p>
+                            <p class="">Atividade: <span>{{ $pessoa->status }}</span></p>
                         </div>
                     </div>
 

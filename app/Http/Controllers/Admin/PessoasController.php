@@ -48,8 +48,27 @@ class PessoasController extends Controller
     public function update(Request $request, $id)
     {
         $pessoa = Owner::find($id);
-        $pessoa->update($request->all());
-        
+        $pessoa->update([
+            'nome' => $request->nome,
+            'codigo' => $request->codigo,
+            'datahora_cadastro' => $request->datahora_cadastro,
+            'data_nascimento' => $request->data_nascimento,
+            'sexo' => $request->sexo,
+            'estado_civil' => $request->estado_civil,
+            'telefone' => $request->telefone,
+            'celular' => $request->celular,
+            'whatsapp' => $request->whatsapp,
+            'email' => $request->email,
+            'tipo_pessoa' => $request->tipo_pessoa,
+            'cpf' => $request->cpf,
+            'rg' => $request->rg,
+            'cidade_nascimento' => $request->cidade_nascimento,
+            'conjuge_nome' => $request->conjuge_nome,
+            'escolaridade' => $request->escolaridade,
+            'profissao' => $request->profissao,
+            'cnpj' => $request->cnpj,
+        ]);
+
         return redirect()->route('usuario');
     }
 }
