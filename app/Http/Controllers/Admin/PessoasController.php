@@ -45,4 +45,11 @@ class PessoasController extends Controller
         $estado = AuxEstado::where('id', $pessoa->getAdress->estado)->first();
         return view('dashboard.usuario.edit', get_defined_vars());
     }
+    public function update(Request $request, $id)
+    {
+        $pessoa = Owner::find($id);
+        $pessoa->update($request->all());
+        
+        return redirect()->route('usuario');
+    }
 }

@@ -26,6 +26,7 @@ Route::middleware(['auth:admin'])->group(function () {
         route::get('dados-pessoais/{id}', [PessoasController::class, 'show'])->name('dados.pessoais');
         route::post('filtro', [PessoasController::class, 'filtro'])->name('filtro');
         route::get('edit/{id}', [PessoasController::class, 'edit'])->name('owner.edit');
+        route::put('update/{id}', [PessoasController::class, 'update'])->name('owner.update');
     });
 
     route::get('animais', [DashboardController::class, 'animais'])->name('animais');

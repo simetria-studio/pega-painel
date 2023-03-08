@@ -49,52 +49,52 @@
                     <div class="position-sticky pt-3 sidebar-sticky painel-menu">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link " href="{{ route('comunicacao') }}">Comunicações</a>
+                                <a class="nav-link {{ Route::currentRouteName() === 'comunicacao' ? 'active' : '' }}" href="{{ route('comunicacao') }}">Comunicações</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cadastrar') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'cadastrar' ? 'active' : '' }}" href="{{ route('cadastrar') }}">
                                     <span data-feather="file" class="align-text-bottom"></span>
                                     Cadastro de Usuários
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('ecommerce') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'ecommerce' ? 'active' : '' }}" href="{{ route('ecommerce') }}">
                                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                     Ecommerce
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('usuario') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'usuario' ? 'active' : '' }}" href="{{ route('usuario') }}">
                                     <span data-feather="users" class="align-text-bottom"></span>
                                     Usuários
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('animais') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'animais' ? 'active' : '' }}" href="{{ route('animais') }}">
                                     <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                                     Animais
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('anuncio') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'anuncio' ? 'active' : '' }}" href="{{ route('anuncio') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Anúncios
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('permissoes') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'permissoes' ? 'active' : '' }}" href="{{ route('permissoes') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Permissões
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('financeiro') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'financeiro' ? 'active' : '' }}" href="{{ route('financeiro') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Financeiro
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('configuracoes') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'configuracoes' ? 'active' : '' }}" href="{{ route('configuracoes') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Configurações
                                 </a>
