@@ -49,52 +49,61 @@
                     <div class="position-sticky pt-3 sidebar-sticky painel-menu">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'comunicacao' ? 'active' : '' }}" href="{{ route('comunicacao') }}">Comunicações</a>
+                                <a class="nav-link {{ Route::currentRouteName() === 'comunicacao' ? 'active' : '' }}"
+                                    href="{{ route('comunicacao') }}">Comunicações</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'cadastrar' ? 'active' : '' }}" href="{{ route('cadastrar') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'cadastrar' ? 'active' : '' }}"
+                                    href="{{ route('cadastrar') }}">
                                     <span data-feather="file" class="align-text-bottom"></span>
                                     Cadastro de Usuários
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'ecommerce' ? 'active' : '' }}" href="{{ route('ecommerce') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'ecommerce' ? 'active' : '' }}"
+                                    href="{{ route('ecommerce') }}">
                                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                     Ecommerce
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'usuario' ? 'active' : '' }}" href="{{ route('usuario') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'usuario' ? 'active' : '' }}"
+                                    href="{{ route('usuario') }}">
                                     <span data-feather="users" class="align-text-bottom"></span>
                                     Usuários
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'animais' ? 'active' : '' }}" href="{{ route('animais') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'animais' ? 'active' : '' }}"
+                                    href="{{ route('animais') }}">
                                     <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                                     Animais
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'anuncio' ? 'active' : '' }}" href="{{ route('anuncio') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'anuncio' ? 'active' : '' }}"
+                                    href="{{ route('anuncio') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Anúncios
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'permissoes' ? 'active' : '' }}" href="{{ route('permissoes') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'permissoes' ? 'active' : '' }}"
+                                    href="{{ route('permissoes') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Permissões
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'financeiro' ? 'active' : '' }}" href="{{ route('financeiro') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'financeiro' ? 'active' : '' }}"
+                                    href="{{ route('financeiro') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Financeiro
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() === 'configuracoes' ? 'active' : '' }}" href="{{ route('configuracoes') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'configuracoes' ? 'active' : '' }}"
+                                    href="{{ route('configuracoes') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Configurações
                                 </a>
@@ -138,8 +147,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('js')
-   
+    @if (Session::has('success'))
+        <script type="text/javascript">
+            Swal.fire({
+                title: 'Sucesso!',
+                icon: 'success',
+                text: "{{ Session::get('success') }}",
+                timer: 5000,
+                type: 'success'
+            }).then((result) => {
+                // Reload the Page
+                location.reload();
+            });
+        </script>
+    @endif
+    @if (Session::has('error'))
+        <script type="text/javascript">
+            Swal.fire({
+                title: 'Oops!',
+                icon: 'error',
+                text: "{{ Session::get('error') }}",
+                timer: 5000,
+                type: 'error'
+            }).then((result) => {
+                // Reload the Page
+                location.reload();
+            });
+        </script>
+    @endif
 </body>
 
 </html>

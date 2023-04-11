@@ -47,6 +47,7 @@ class PessoasController extends Controller
     }
     public function update(Request $request, $id)
     {
+     
         $pessoa = Owner::find($id);
         $pessoa->update([
             'nome' => $request->nome,
@@ -69,6 +70,6 @@ class PessoasController extends Controller
             'cnpj' => $request->cnpj,
         ]);
 
-        return redirect()->route('usuario');
+        return redirect()->route('usuario')->with('success', 'Usuário atualizado com sucesso!');
     }
 }
