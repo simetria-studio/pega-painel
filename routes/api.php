@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AdAuthController;
 use App\Http\Controllers\User\Auth\LoginController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('admin/store', [AdAuthController::class, 'store'])->name('admin.store.post');
 Route::post('auth/login', [LoginController::class, 'login'])->name('login.post');
+
+Route::post('register/store', [UserController::class, 'store'])->name('register.post');
