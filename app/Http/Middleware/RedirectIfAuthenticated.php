@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
             return redirect()->route('home');
         }
         if (Auth::guard($guard)->check()) {
-            return redirect('/');
+            return redirect('/app/index');
         }
         return $next($request);
     }

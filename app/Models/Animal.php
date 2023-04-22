@@ -11,6 +11,35 @@ class Animal extends Model
 
     protected $table = 'srg_animal';
 
+    protected $fillable = [
+        'nome_completo',
+        'numero_chip',
+        'especie',
+        'raca',
+        'registro_tipo',
+        'registro_livro',
+        'registro_numero',
+        'sexo',
+        'pai',
+        'mae',
+        'data_nascimento',
+        'fazenda_nascimento',
+        'criador',
+        'proprietario',
+        'pelagem',
+        'doador',
+        'dna_tipo',
+        'dna_data_exame',
+        'dna_laboratorio',
+        'data_castracao',
+        'data_baixa',
+        'motivo_baixa',
+        'status',
+        'observacoes',
+        'marca_criador'
+
+
+    ];
 
     public function getPai()
 

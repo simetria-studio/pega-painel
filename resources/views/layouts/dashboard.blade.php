@@ -81,6 +81,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteName() === 'mark.index' ? 'active' : '' }}"
+                                    href="{{ route('mark.index') }}">
+                                    <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+                                    Marcas de resenha
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteName() === 'anuncio' ? 'active' : '' }}"
                                     href="{{ route('anuncio') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
