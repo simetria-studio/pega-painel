@@ -58,7 +58,7 @@ Route::middleware(['auth:admin'])->group(function () {
     route::any('logout-admin', [AdAuthController::class, 'logout'])->name('admin.logout');
 });
 
-Route::middleware(['auth:web'])->group(function () {
+Route::domain('app.devsquad.dev.br')->middleware(['auth:web'])->group(function () {
     Route::get('/app/index', [App::class, 'index'])->name('app.index');
 
     Route::get('chose-owner', [ResenhaController::class, 'choseOwner'])->name('chose.owner');

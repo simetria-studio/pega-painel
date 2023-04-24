@@ -33,9 +33,19 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected function mapSubdomainRoutes()
+    {
+        Route::domain('app.devsquad.dev.br')->group(function () {
+            Route::get('/', function () {
+                return 'Olá, mundo!';
+            });
+        });
+    }
+
     public function boot()
     {
         $this->configureRateLimiting();
+        $this->mapSubdomainRoutes();
 
         $this->routes(function () {
             Route::prefix('api')
