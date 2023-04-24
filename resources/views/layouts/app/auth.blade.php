@@ -8,6 +8,7 @@
     <title>ABCJPêga @yield('title')</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ asset('app/css/auth.min.css') }}">
 </head>
 
 <body class="bg-gray-100">
