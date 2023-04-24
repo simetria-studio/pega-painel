@@ -8,6 +8,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0ab2bcde1c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('app/css/style.min.css') }}">
@@ -15,38 +16,43 @@
 
 <body class="bg-gray-100">
     <header class=" bg-red-900 flex justify-between items-center p-3">
-        {{--    <div id="sidemenu">
-            <button class="sidemenu__btn bg-red-900" v-on:click="navOpen = !navOpen" v-bind:class="{ active: navOpen }">
-                <span class="top"></span>
-                <span class="mid"></span>
-                <span class="bottom"></span>
+        <div class="menu-mobile">
+            <button class="menu-mobile__btn">
+                <svg class="menu-mobile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                    height="24">
+                    <path class="primary" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
-       <transition name="translateX">
-                <nav v-show="navOpen">
-                    <div class="sidemenu__wrapper bg-red-900">
-                        <ul class="sidemenu__list">
-                            <li class="sidemenu__item"><a href="/">Home</a></li>
-                            <li class="sidemenu__item">
-                                <a to="/pessoas/meu-perfil">Meu Perfil</a>
-                            </li>
-                            <li class="sidemenu__item">
-                                <a to="/informativos">Informativos</a>
-                            </li>
-                            <li class="sidemenu__item">
-                                <a to="/financeiro">Financeiro</a>
-                            </li>
-                            <li class="sidemenu__item">
-                                <a to="/solicitacoes">Solicitações</a>
-                            </li>
-                            <li class="sidemenu__item">
-                                <a to="/carteira-associado">Carteira Associado</a>
-                            </li>
-                            <li class="sidemenu__item"><a @click="logout">Sair</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </transition>
-        </div> --}}
+        </div>
+        <div class="menu-body hidden">
+            <div class="bg-red-900 header-menu">
+                <div>
+                    <button class="close">X</button>
+                </div>
+            </div>
+            <div class="sidemenu__wrapper bg-red-900">
+                <ul class="sidemenu__list">
+                    <li class="sidemenu__item"><a href="/">Home</a></li>
+                    <li class="sidemenu__item">
+                        <a to="/pessoas/meu-perfil">Meu Perfil</a>
+                    </li>
+                    <li class="sidemenu__item">
+                        <a to="/informativos">Informativos</a>
+                    </li>
+                    <li class="sidemenu__item">
+                        <a to="/financeiro">Financeiro</a>
+                    </li>
+                    <li class="sidemenu__item">
+                        <a to="/solicitacoes">Solicitações</a>
+                    </li>
+                    <li class="sidemenu__item">
+                        <a to="/carteira-associado">Carteira Associado</a>
+                    </li>
+                    <li class="sidemenu__item"><a @click="logout">Sair</a></li>
+                </ul>
+            </div>
+        </div>
 
         <form class="flex items-center">
             <label for="simple-search" class="sr-only">Busca</label>
@@ -93,8 +99,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('app/js/fabric.min.js') }}"></script>
     @yield('js')
+
+    <script>
+        $(document).on('click', '.menu-mobile__btn', function() {
+            $('.menu-body').toggleClass('hidden');
+        });
+        $(document).on('click', '.close', function() {
+            $('.menu-body').toggleClass('hidden');
+        });
+    </script>
 </body>
 
 </html>

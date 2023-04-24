@@ -10,7 +10,7 @@
         <div class="flex justify-center my-8 text-lg font-medium">
             <p>
                 Bem vindo!
-                <span class="pl-2 text-red-900"> Usuario </span>
+                <span class="pl-2 text-red-900"> {{ auth()->user()->name }} </span>
             </p>
         </div>
         <div class="mx-10 grid  grid-cols-2 grid-rows-3  gap-8 text-center text-white text-xs">
@@ -26,7 +26,7 @@
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/financeiro.png') }}" alt="" />
                 Financeiro
             </a>
-            <a href="{{ route('resenha.step1') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('chose.owner') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/resenha.png') }}" alt="" />
                 Resenha
             </a>

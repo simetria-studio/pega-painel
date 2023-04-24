@@ -60,6 +60,8 @@ Route::middleware(['auth:admin'])->group(function () {
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/app/index', [App::class, 'index'])->name('app.index');
 
+    Route::get('chose-owner', [ResenhaController::class, 'choseOwner'])->name('chose.owner');
+    Route::get('chose-animal', [ResenhaController::class, 'choseAnimal'])->name('chose.animal');
     Route::get('resenha-step-1', [ResenhaController::class, 'step1'])->name('resenha.step1');
     Route::get('resenha-step-2', [ResenhaController::class, 'step2'])->name('resenha.step2');
     Route::get('resenha-step-3', [ResenhaController::class, 'step3'])->name('resenha.step3');

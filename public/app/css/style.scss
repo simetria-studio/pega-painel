@@ -3,6 +3,68 @@ canvas {
 
 }
 
+.menu-mobile__btn {
+    color: #fff;
+}
+
+.menu-body {
+    background-color: #fff;
+    color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    // padding: 20px;
+    overflow-y: scroll;
+    transition: all 0.3s ease-in-out;
+
+    // transform: translateX(-100%);
+    .sidemenu__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        li {
+            margin: 10px 0;
+
+            a {
+                color: #000;
+                font-size: 1.5em;
+                font-weight: 700;
+                text-transform: uppercase;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: #b94040;
+                }
+            }
+        }
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;  
+        font-size: 2em;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: #b94040;
+        }
+    }
+}
+.header-menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+}
+
 .confirm-draw {
     background-color: transparent;
     color: #11f049;
@@ -109,4 +171,7 @@ canvas {
     align-items: center;
     margin-top: 20px;
     margin: 0 20px;
+}
+.select-owner{
+    margin: 50px 20px;
 }
