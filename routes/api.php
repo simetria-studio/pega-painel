@@ -2,9 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Auth\AdAuthController;
-use App\Http\Controllers\User\Auth\LoginController;
+use App\Http\Controllers\Apps\AuthController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\AdAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::post('admin/store', [AdAuthController::class, 'store'])->name('admin.stor
 Route::post('auth/login', [LoginController::class, 'login'])->name('login.post');
 
 Route::post('register/store', [UserController::class, 'store'])->name('register.post');
+
+Route::post('app/register/post', [AuthController::class, 'register'])->name('app.register.post');
