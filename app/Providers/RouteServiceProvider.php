@@ -33,19 +33,19 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapSubdomainRoutes()
-    {
-        Route::domain('app.devsquad.dev.br')->group(function () {
-            Route::get('/', function () {
-                return redirect()->route('app.index');
-            });
-        });
-    }
+    // protected function mapSubdomainRoutes()
+    // {
+    //     Route::domain('app.devsquad.dev.br')->group(function () {
+    //         Route::get('/', function () {
+    //             return redirect()->route('app.index');
+    //         });
+    //     });
+    // }
 
     public function boot()
     {
         $this->configureRateLimiting();
-        $this->mapSubdomainRoutes();
+        // $this->mapSubdomainRoutes();
 
         $this->routes(function () {
             Route::prefix('api')

@@ -110,7 +110,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteName() === 'configuracoes' ? 'active' : '' }}"
-                                    href="{{ route('configuracoes') }}">
+                                    href="{{ url('configuracoes') }}">
                                     <span data-feather="layers" class="align-text-bottom"></span>
                                     Configurações
                                 </a>

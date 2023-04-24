@@ -20,7 +20,7 @@ Auth::routes();
 Route::post('admin/login', [AdAuthController::class, 'login'])->name('admin.login.post');
 
 Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/painel', [HomeController::class, 'index'])->name('home');
     route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
     route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
@@ -34,8 +34,9 @@ Route::middleware(['auth:admin'])->group(function () {
         route::put('update/{id}', [PessoasController::class, 'update'])->name('owner.update');
     });
 
-    route::get('animais', [DashboardController::class, 'animais'])->name('animais');
-    route::prefix('animais')->group(function () {
+   
+    route::prefix('painel/animais')->group(function () {
+        route::get('animais', [DashboardController::class, 'animais'])->name('animais');
         route::get('consultar-animais', [AnimaisController::class, 'animais'])->name('consultar.animais');
         route::get('informacoes/{id}', [AnimaisController::class, 'show'])->name('informacoes.animal');
         route::get('cadastrar', [DashboardController::class, 'cadastrarAnimal'])->name('cadastrar-animal');
@@ -52,8 +53,8 @@ Route::middleware(['auth:admin'])->group(function () {
 
     route::get('anuncio', [DashboardController::class, 'anuncio'])->name('anuncio');
     route::get('permissoes', [DashboardController::class, 'permissoes'])->name('permissoes');
-    route::get('financeiro', [DashboardController::class, 'financeiro'])->name('financeiro');
-    route::get('configuracoes', [DashboardController::class, 'configuracoes'])->name('configuracoes');
+    route::get('painel/financeiro', [DashboardController::class, 'financeiro'])->name('financeiro');
+    route::get('painel/configuracoes', [DashboardController::class, 'configuracoes'])->name('configuracoes');
 
     route::any('logout-admin', [AdAuthController::class, 'logout'])->name('admin.logout');
 });
