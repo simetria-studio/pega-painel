@@ -74,4 +74,15 @@ class HomeController extends Controller
    {
       return view('app.warning');
    }
+
+
+   public function cobricao()
+   {
+      return view('app.comunicacoes.cobricao.index');
+   }
+
+   public function  asinino()
+   {
+      return view('app.comunicacoes.cobricao.asinino');
+   }
 }
