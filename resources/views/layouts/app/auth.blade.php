@@ -17,6 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('js')
+    <script>
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Se o dispositivo não é móvel, redireciona para a mensagem de erro ou para outra URL
+            window.location.href = "{{ route('app.warning') }}";
+        }
+    </script>
 </body>
 
 </html>

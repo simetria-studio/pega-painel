@@ -102,7 +102,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('app/js/fabric.min.js') }}"></script>
     @yield('js')
-
+    <script>
+        if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+          // Se o dispositivo não é móvel, redireciona para a mensagem de erro ou para outra URL
+          window.location.href = "{{ route('app.warning') }}";
+        }
+        </script>
     <script>
         $(document).on('click', '.menu-mobile__btn', function() {
             $('.menu-body').toggleClass('hidden');

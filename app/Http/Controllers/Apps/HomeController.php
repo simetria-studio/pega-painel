@@ -69,4 +69,9 @@ class HomeController extends Controller
    {
       return view('app.configuracao.index');
    }
+
+   public function warning()
+   {
+      return view('app.warning');
+   }
 }

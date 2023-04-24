@@ -92,3 +92,5 @@ Route::post('app/login/post', [AuthController::class, 'login'])->name('app.login
 Route::get('app/logout', [AuthController::class, 'logout'])->name('app.logout');
 
 Route::get('app/register', [AuthController::class, 'registerPage'])->name('app.register');
+
+Route::get('app-warning', [App::class, 'warning'])->name('app.warning');
