@@ -95,4 +95,37 @@ class HomeController extends Controller
    {
       return view('app.comunicacoes.transferencia');
    }
+
+   public function mensagem()
+   {
+      return view('app.comunicacoes.mensagem');
+   }
+
+   public function chamado()
+   {
+      return view('app.comunicacoes.chamado-tecnico');
+   }
+
+   public function segundaVia()
+   {
+      return view('app.comunicacoes.segunda-via');
+   }
+   public function baixaAnimal()
+   {
+      return view('app.comunicacoes.baixa-animal');
+   }
+   public function alteracaoAfixo()
+   {
+      return view('app.comunicacoes.alteracao-afixo');
+   }
+
+   public function alteracaoCategoria()
+   {
+      return view('app.comunicacoes.alteracao-categoria');
+   }
+
+   public function baixaAssociado()
+   {
+      return view('app.comunicacoes.baixa-associado');
+   }
 }

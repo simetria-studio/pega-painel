@@ -28,23 +28,23 @@
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Transferência de propriedade
             </a>
-            <a href="/comunicacoes/mensagem"
+            <a href="{{ route('app.mensagem') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Comunicado Oficial
             </a>
-            <a href="/comunicacoes/chamado-tecnico"
+            <a href="{{ route('app.chamado') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Chamado Técnico
             </a>
-            <a href="/comunicacoes/2-via-registro"
+            <a href="{{ route('app.segundaVia') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Segunda Via de registro
             </a>
-            <a href="/comunicacoes/baixa-morte"
+            <a href="{{ route('app.baixaAnimal') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Baixa/Morte de animal
             </a>
-            <a href="/comunicacoes/alteracao-afixo"
+            <a href="{{ route('app.alteracaoAfixo') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Alteração de afixo
             </a>
@@ -52,11 +52,11 @@
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Inscrição de doador sêmen/embrião
             </a>
-            <a href="/comunicacoes/alteracao-categoria"
+            <a href="{{ route('app.alteracaoCategoria') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Alteração de categoria
             </a>
-            <a href="/comunicacoes/baixa-associado"
+            <a href="{{ route('app.baixaAssociado') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Baixa de associado
             </a>

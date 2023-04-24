@@ -93,6 +93,13 @@ Route::middleware(['auth:web'])->group(function () {
 
     Route::get('nascimento', [App::class, 'nascimento'])->name('app.nascimento');
     Route::get('transferencia', [App::class, 'transferencia'])->name('app.transferencia');
+    Route::get('mensagem', [App::class, 'mensagem'])->name('app.mensagem');
+    Route::get('chamado', [App::class, 'chamado'])->name('app.chamado');
+    Route::get('segunda-via', [App::class, 'segundaVia'])->name('app.segundaVia');
+    Route::get('baixa-animal', [App::class, 'baixaAnimal'])->name('app.baixaAnimal');
+    Route::get('alteracao-afixo', [App::class, 'alteracaoAfixo'])->name('app.alteracaoAfixo');
+    Route::get('alteracao-categoria', [App::class, 'alteracaoCategoria'])->name('app.alteracaoCategoria');
+    Route::get('baixa-associado', [App::class, 'baixaAssociado'])->name('app.baixaAssociado');
 });
 
 Route::get('app/login', [AuthController::class, 'loginPage'])->name('app.login');
