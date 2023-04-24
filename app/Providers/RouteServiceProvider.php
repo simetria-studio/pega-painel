@@ -41,11 +41,20 @@ class RouteServiceProvider extends ServiceProvider
             });
         });
     }
+    protected function mapSubdomainRoutesPainel()
+    {
+        Route::domain('painel-pega.devsquad.dev.br')->group(function () {
+            Route::get('/', function () {
+                return redirect()->route('home');
+            });
+        });
+    }
 
     public function boot()
     {
         $this->configureRateLimiting();
         $this->mapSubdomainRoutes();
+        $this->mapSubdomainRoutesPainel();
 
         $this->routes(function () {
             Route::prefix('api')
