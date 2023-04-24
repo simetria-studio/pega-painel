@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <header class=" bg-red-900 flex justify-between items-center p-3">
+    <header class=" bg-red-900 flex justify-between items-center p-3 header">
         <div class="menu-mobile">
             <button class="menu-mobile__btn">
                 <svg class="menu-mobile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
@@ -53,8 +53,10 @@
                 </ul>
             </div>
         </div>
-
-        <form class="flex items-center">
+        <div class="new-span">
+            <span></span>
+        </div>
+        {{-- <form class="flex items-center">
             <label for="simple-search" class="sr-only">Busca</label>
             <div class="relative w-full">
                 <button type="submit" class="absolute inset-y-0 right-0 flex items-center pr-3 ">
@@ -69,7 +71,7 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 focus:outline-none block w-full pr-10 p-1 "
                     placeholder="Busca">
             </div>
-        </form>
+        </form> --}}
         <div>
             <a to="/pessoas/meu-perfil" class="text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
