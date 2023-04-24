@@ -14,15 +14,15 @@
             </p>
         </div>
         <div class="mx-10 grid  grid-cols-2 grid-rows-3  gap-8 text-center text-white text-xs">
-            <a href="{{ url('/pessoas') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('app.pessoas') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/pessoas.png') }}" alt="" />
                 Pessoas
             </a>
-            <a href="{{ url('/animais') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('app.animais') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/burro.png') }}" alt="" />
                 Animais
             </a>
-            <a href="{{ url('/financeiro') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('app.financeiro') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/financeiro.png') }}" alt="" />
                 Financeiro
             </a>
@@ -30,11 +30,11 @@
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/resenha.png') }}" alt="" />
                 Resenha
             </a>
-            <a href="{{ url('/configuracoes') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('app.configuracoes') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/config.png') }}" alt="" />
                 Configurações
             </a>
-            <a href="{{ url('/comunicacoes') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+            <a href="{{ route('app.comunicacoes') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/comunicacao.png') }}" alt="" />
                 Comunicações
             </a>

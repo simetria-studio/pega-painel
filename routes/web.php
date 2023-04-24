@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AnimaisController;
 use App\Http\Controllers\Admin\PessoasController;
 use App\Http\Controllers\Apps\HomeController as App;
 use App\Http\Controllers\Admin\Auth\AdAuthController;
+use App\Http\Controllers\Apps\AnimaisController as AppAnimais;
 
 Auth::routes();
 
@@ -67,6 +68,23 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('resenha-step-3', [ResenhaController::class, 'step3'])->name('resenha.step3');
     Route::get('resenha-step-4', [ResenhaController::class, 'step4'])->name('resenha.step4');
     Route::get('resenha-step-5', [ResenhaController::class, 'step5'])->name('resenha.step5');
+
+    Route::get('pessoas', [App::class, 'pessoas'])->name('app.pessoas');
+    Route::get('arbitros', [App::class, 'arbitros'])->name('app.arbitros');
+    Route::get('criadores',  [App::class, 'criadores'])->name('app.criadores');
+    Route::get('meu-perfil', [App::class, 'meuPerfil'])->name('app.meuPerfil');
+    Route::get('parceiros', [App::class, 'parceiros'])->name('app.parceiros');
+    Route::get('veterinarios', [App::class, 'veterinarios'])->name('app.veterinarios');
+    Route::get('zootecnicos', [App::class, 'zootecnicos'])->name('app.zootecnicos');
+    Route::get('tecnicos', [App::class, 'tecnicos'])->name('app.tecnicos');
+
+    Route::get('animais', [App::class, 'animais'])->name('app.animais');
+    Route::get('meus-animais', [AppAnimais::class, 'meusAnimais'])->name('app.meusAnimais');
+
+    Route::get('financeiro', [App::class, 'financeiro'])->name('app.financeiro');
+    Route::get('comunicacoes', [App::class, 'comunicacoes'])->name('app.comunicacoes');
+    Route::get('configuracoes', [App::class, 'configuracoes'])->name('app.configuracoes');
+    
 });
 
 Route::get('app/login', [AuthController::class, 'loginPage'])->name('app.login');
