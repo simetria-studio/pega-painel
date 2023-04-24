@@ -26,6 +26,8 @@ Route::middleware(['auth:admin'])->group(function () {
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
     route::get('usuario', [PessoasController::class, 'index'])->name('usuario');
 
+    Route::get('criar-user', [AuthController::class, 'create'])->name('user.create');
+
     route::prefix('owners')->group(function () {
         route::get('user-animais/{id}', [PessoasController::class, 'animais'])->name('user.animais');
         route::get('dados-pessoais/{id}', [PessoasController::class, 'show'])->name('dados.pessoais');
@@ -93,6 +95,6 @@ Route::get('app/logout', [AuthController::class, 'logout'])->name('app.logout');
 
 Route::get('app/register', [AuthController::class, 'registerPage'])->name('app.register');
 
-
+Route::post('app/register/post', [AuthController::class, 'register'])->name('app.register.post');
 
 Route::get('app-warning', [App::class, 'warning'])->name('app.warning');

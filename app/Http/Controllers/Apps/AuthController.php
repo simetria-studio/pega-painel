@@ -47,18 +47,22 @@ class AuthController extends Controller
         return view('app.auth.register');
     }
 
+    public function create()
+    {
+        return view('dashboard.add-user');
+    }
+
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+        // dd($request->all());
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'type' => 1,
+            'permission' => 1,
         ]);
 
 

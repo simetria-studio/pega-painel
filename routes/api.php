@@ -27,4 +27,3 @@ Route::post('auth/login', [LoginController::class, 'login'])->name('login.post')
 
 Route::post('register/store', [UserController::class, 'store'])->name('register.post');
 
-Route::post('app/register/post', [AuthController::class, 'register'])->name('app.register.post');
