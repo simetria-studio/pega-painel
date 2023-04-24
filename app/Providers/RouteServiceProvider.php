@@ -37,7 +37,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::domain('app.devsquad.dev.br')->group(function () {
             Route::get('/', function () {
-                return 'Olá, mundo!';
+                return redirect()->route('app.index');
             });
         });
     }
