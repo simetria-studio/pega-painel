@@ -85,4 +85,14 @@ class HomeController extends Controller
    {
       return view('app.comunicacoes.cobricao.asinino');
    }
+
+   public function nascimento()
+   {
+      return view('app.comunicacoes.nascimento');
+   }
+
+   public function transferencia()
+   {
+      return view('app.comunicacoes.transferencia');
+   }
 }

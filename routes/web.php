@@ -90,6 +90,9 @@ Route::middleware(['auth:web'])->group(function () {
 
     Route::get('cobricao', [App::class, 'cobricao'])->name('app.cobricao');
     Route::get('cobricao-asinino', [App::class, 'asinino'])->name('app.cobricaoAsinino');
+
+    Route::get('nascimento', [App::class, 'nascimento'])->name('app.nascimento');
+    Route::get('transferencia', [App::class, 'transferencia'])->name('app.transferencia');
 });
 
 Route::get('app/login', [AuthController::class, 'loginPage'])->name('app.login');

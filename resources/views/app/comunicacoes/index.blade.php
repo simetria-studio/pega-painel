@@ -20,11 +20,11 @@
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Cobrição
             </a>
-            <a href="/comunicacoes/nascimento"
+            <a href="{{ route('app.nascimento') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Nascimento
             </a>
-            <a href="/comunicacoes/transferencia"
+            <a href="{{ route('app.transferencia') }}"
                 class="border cursor-pointer drop-shadow block w-full mb-5 p-2 bg-zinc-100 rounded-xl border-zinc-100 focus:outline-none focus:border-red-800 focus:ring focus:ring-red-300 hover:border-red-900">
                 Transferência de propriedade
             </a>
