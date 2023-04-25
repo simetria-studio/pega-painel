@@ -78,7 +78,7 @@
             ctx.restore();
         }
         canvas.backgroundColor = "rgba(0, 0, 0, 0)";
-        canvas.setBackgroundImage('{{ asset('app/img/step3.png') }}', function() {
+        canvas.setBackgroundImage('{{ asset('app/img/step6.png') }}', function() {
             let img = canvas.backgroundImage;
             img.originX = 'left';
             img.originY = 'top';
@@ -170,7 +170,17 @@
                 quality: 1
             });
             console.log(canvasImage)
-            window.location.href = '{{ url('/resenha-step-4') }}';
+         
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: 'Resenha salva com sucesso!',
+
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '{{ route('app.index') }}';
+                }
+            });
             // $.ajax({
             //     url: '#',
             //     type: 'POST',

@@ -36,7 +36,7 @@ Route::middleware(['auth:admin'])->group(function () {
         route::put('update/{id}', [PessoasController::class, 'update'])->name('owner.update');
     });
 
-   
+
     route::prefix('painel/animais')->group(function () {
         route::get('animais', [DashboardController::class, 'animais'])->name('animais');
         route::get('consultar-animais', [AnimaisController::class, 'animais'])->name('consultar.animais');
@@ -71,6 +71,7 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('resenha-step-3', [ResenhaController::class, 'step3'])->name('resenha.step3');
     Route::get('resenha-step-4', [ResenhaController::class, 'step4'])->name('resenha.step4');
     Route::get('resenha-step-5', [ResenhaController::class, 'step5'])->name('resenha.step5');
+    Route::get('resenha-step-6', [ResenhaController::class, 'step6'])->name('resenha.step6');
 
     Route::get('pessoas', [App::class, 'pessoas'])->name('app.pessoas');
     Route::get('arbitros', [App::class, 'arbitros'])->name('app.arbitros');

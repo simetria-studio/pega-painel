@@ -48,4 +48,11 @@ class ResenhaController extends Controller
         $marcas = Mark::where('categorie', 5)->get();
         return view('app.resenha.step-5', get_defined_vars());
     }
+    public function step6()
+    {
+
+        $marcas = Mark::where('categorie', 5)->get();
+        return view('app.resenha.step-6', get_defined_vars());
+    }
+
 }

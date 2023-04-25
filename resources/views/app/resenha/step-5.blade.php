@@ -170,17 +170,8 @@
                 quality: 1
             });
             console.log(canvasImage)
-
-            Swal.fire({
-                icon: 'success',
-                title: 'Sucesso!',
-                text: 'Resenha salva com sucesso!',
-
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = '{{ route('app.index') }}';
-                }
-            });
+            window.location.href = '{{ url('/resenha-step-6') }}';
+            
             // window.location.href = '{{ route('app.index') }}';
             // $.ajax({
             //     url: '#',
