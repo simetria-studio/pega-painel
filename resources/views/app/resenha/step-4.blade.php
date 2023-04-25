@@ -78,7 +78,7 @@
             ctx.restore();
         }
         canvas.backgroundColor = "rgba(0, 0, 0, 0)";
-        canvas.setBackgroundImage('{{ asset('app/img/patas-dianteiras.png') }}', function() {
+        canvas.setBackgroundImage('{{ asset('app/img/step4.png') }}', function() {
             let img = canvas.backgroundImage;
             img.originX = 'left';
             img.originY = 'top';
