@@ -33,7 +33,7 @@
             </div>
             <div class="sidemenu__wrapper bg-red-900">
                 <ul class="sidemenu__list">
-                    <li class="sidemenu__item"><a href="/">Home</a></li>
+                    <li class="sidemenu__item"><a href="{{ route('app.index') }}">Home</a></li>
                     <li class="sidemenu__item">
                         <a to="/pessoas/meu-perfil">Meu Perfil</a>
                     </li>

@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="my-10">
-        <a href="/">
-            <img src="{{ asset('img/home.png') }}" class="mx-auto w-36 h-26 text-red-900" alt="" />
+        <a href="{{ route('app.index') }}">
+            <img src="{{ asset('app/img/home.png') }}" class="mx-auto w-36 h-26 text-red-900"/>
         </a>
         <div class="flex justify-center my-8 text-lg font-medium">
             <p>

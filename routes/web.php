@@ -84,8 +84,9 @@ Route::middleware(['auth:web'])->group(function () {
 
     Route::get('animais', [App::class, 'animais'])->name('app.animais');
     Route::get('meus-animais', [AppAnimais::class, 'meusAnimais'])->name('app.meusAnimais');
-
     Route::get('financeiro', [App::class, 'financeiro'])->name('app.financeiro');
+
+
     Route::get('comunicacoes', [App::class, 'comunicacoes'])->name('app.comunicacoes');
     Route::get('configuracoes', [App::class, 'configuracoes'])->name('app.configuracoes');
 

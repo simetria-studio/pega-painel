@@ -59,6 +59,10 @@ class HomeController extends Controller
    {
       return view('app.financeiro.index');
    }
+   public function custos()
+   {
+        return view('app.financeiro.custos');
+   }
 
    public function comunicacoes()
    {
