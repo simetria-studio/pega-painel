@@ -34,23 +34,27 @@
             </div>
             <div class="sidemenu__wrapper bg-red-900">
                 <ul class="sidemenu__list">
-                    <li class="sidemenu__item"><a href="{{ route('app.index') }}">Home</a></li>
                     <li class="sidemenu__item">
-                        <a to="/pessoas/meu-perfil">Meu Perfil</a>
+                        <a class="text-gray-100" href="{{ route('app.index') }}">Home</a>
                     </li>
                     <li class="sidemenu__item">
-                        <a to="/informativos">Informativos</a>
+                        <a class="text-gray-100" href="{{ route('app.meuPerfil') }}">Meu Perfil</a>
                     </li>
                     <li class="sidemenu__item">
-                        <a to="/financeiro">Financeiro</a>
+                        <a class="text-gray-100" href="#">Informativos</a>
                     </li>
                     <li class="sidemenu__item">
-                        <a to="/solicitacoes">Solicitações</a>
+                        <a class="text-gray-100" href="{{ route('app.financeiro') }}">Financeiro</a>
                     </li>
                     <li class="sidemenu__item">
-                        <a to="/carteira-associado">Carteira Associado</a>
+                        <a class="text-gray-100" href="#">Solicitações</a>
                     </li>
-                    <li class="sidemenu__item"><a @click="logout">Sair</a></li>
+                    <li class="sidemenu__item">
+                        <a class="text-gray-100" href="#">Carteira Associado</a>
+                    </li>
+                    <li class="sidemenu__item">
+                        <a class="text-gray-100" href="{{ route('app.logout') }}">Sair</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -74,7 +78,7 @@
             </div>
         </form> --}}
         <div>
-            <a to="/pessoas/meu-perfil" class="text-white">
+            <a href="{{ route('app.meuPerfil') }}" class="text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -106,11 +110,11 @@
     <script src="{{ asset('app/js/fabric.min.js') }}"></script>
     @yield('js')
     <script>
-        if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-          // Se o dispositivo não é móvel, redireciona para a mensagem de erro ou para outra URL
-          window.location.href = "{{ route('app.warning') }}";
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Se o dispositivo não é móvel, redireciona para a mensagem de erro ou para outra URL
+            window.location.href = "{{ route('app.warning') }}";
         }
-        </script>
+    </script>
     <script>
         $(document).on('click', '.menu-mobile__btn', function() {
             $('.menu-body').toggleClass('hidden');

@@ -14,8 +14,9 @@
         </div>
         <div class="w-full">
             <div class="foto-perfil mb-5">
-                <div class="mb-3 border-4 border-red-900 rounded-full w-32 h-32 mx-auto">
-                    <img src="#" class="rounded-full w-full h-full object-cover ">
+                <div class="flex justify-center  mb-3">
+                    <img class="inline-block w-32 h-32 rounded-full ring-2 ring-red-800"
+                        src="#">
                 </div>
                 <div class="text-center">
                     <label for="avatar" class="text-red-800 font-semibold cursor-pointer">Alterar Imagem <br> de
@@ -28,7 +29,7 @@
             <!-- dados pessoais  -->
             <div class="mb-4">
                 <h1 class="text-red-900 font-medium text-lg text-center mb-3">
-                    Alisson Tiago Ezidio Galvão
+                    {{ auth()->user()->name }}
                 </h1>
                 <div class="font-medium text-base flex justify-center mx-8 gap-3">
                     <div>
@@ -37,9 +38,9 @@
                         <p>Telefone:</p>
                     </div>
                     <div>
-                        <p>tiago.ezidio99@gmail.com</p>
-                        <p>(41) 99105-1335</p>
-                        <p>(41) 99105-1335</p>
+                        <p>{{ auth()->user()->email }}</p>
+                        <p>(00) 90000-0000</p>
+                        <p>(00) 90000-0000</p>
                     </div>
                 </div>
             </div>
@@ -60,11 +61,11 @@
                             <p>Cônjulge</p>
                         </div>
                         <div>
-                            <p>Alisson Tiago Ezidio Galvão</p>
-                            <p>096.091.599-07</p>
-                            <p>010000000</p>
-                            <p>18/06/1999</p>
-                            <p>Rosana Galvão</p>
+                            <p>{{ auth()->user()->name }}</p>
+                            <p>000.000.000-00</p>
+                            <p>000000000</p>
+                            <p>00/00/00</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -83,11 +84,11 @@
                             <p>Número</p>
                         </div>
                         <div>
-                            <p>Paraná</p>
-                            <p>Piraquara</p>
-                            <p>83310-210</p>
-                            <p>Avenida dos Eucaliptos</p>
-                            <p>600</p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -108,11 +109,11 @@
                             <p>Preposição</p>
                         </div>
                         <div>
-                            <p>teste</p>
-                            <p>teste</p>
-                            <p>Parana</p>
-                            <p>teste</p>
-                            <p>teste</p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
