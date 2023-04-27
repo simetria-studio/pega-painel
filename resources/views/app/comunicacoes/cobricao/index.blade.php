@@ -20,12 +20,12 @@
         </div>
 
         <div class="mx-10 grid  grid-cols-2 grid-rows-3  gap-8 text-center text-white text-xs">
-            <a href="{{ url('comunicacoes/cobricao/asinino') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full">
+            <a href="{{ route('app.cobricaoAsinino') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full">
                 <img class="mx-auto  my-2 w-16 h-16" src="{{ asset('app/img/burro.png') }}" alt="">
                 Asinino
             </a>
 
-            <a href="{{ url('comunicacoes/cobricao/muar') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full">
+            <a href="{{ route('app.cobricaoMuar') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full">
                 <img class="mx-auto  my-2 w-16 h-16" src="{{ asset('app/img/cavalo.png') }}" alt="">
                 Muar
             </a>

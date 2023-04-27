@@ -89,9 +89,29 @@ Route::middleware(['auth:web'])->group(function () {
 
     Route::get('comunicacoes', [App::class, 'comunicacoes'])->name('app.comunicacoes');
     Route::get('configuracoes', [App::class, 'configuracoes'])->name('app.configuracoes');
-
+    //////////////////////////////// Cobrições /////////////////////////
     Route::get('cobricao', [App::class, 'cobricao'])->name('app.cobricao');
-    Route::get('cobricao-asinino', [App::class, 'asinino'])->name('app.cobricaoAsinino');
+    //////// Cobrições de asininos ////////
+    Route::get('cobricao/asinino', [App::class, 'asinino'])->name('app.cobricaoAsinino');
+    //////// Gestações de asininos ////////
+    Route::get('/asinino/gestacao', [App::class, 'gestacaoAsinino'])->name('app.gestacaoAsinino');
+    Route::get('/asinino/gestacao/natural', [App::class, 'gestacaoNaturalAsinino'])->name('app.gestacaoNaturalAsinino');
+    Route::get('/asinino/gestacao/artificial', [App::class, 'gestacaoArtificialAsinino'])->name('app.gestacaoArtificialAsinino');
+    //////// Transferências de asininos ////////
+    Route::get('/asinino/transferencia', [App::class, 'transferenciaAsinino'])->name('app.transferenciaAsinino');
+    Route::get('/asinino/transferencia/natural', [App::class, 'transferenciaNaturalAsinino'])->name('app.transferenciaNaturalAsinino');
+    Route::get('/asinino/transferencia/artificial', [App::class, 'transferenciaArtificialAsinino'])->name('app.transferenciaArtificialAsinino');
+    //////// Cobrições de Muares ////////
+    Route::get('cobricao/muar', [App::class, 'muar'])->name('app.cobricaoMuar');
+    //////// Gestações de Muares ////////
+    Route::get('/muar/gestacao', [App::class, 'gestacaoMuar'])->name('app.gestacaoMuar');
+    Route::get('/muar/gestacao/natural', [App::class, 'gestacaoNaturalMuar'])->name('app.gestacaoNaturalMuar');
+    Route::get('/muar/gestacao/artificial', [App::class, 'gestacaoArtificialMuar'])->name('app.gestacaoArtificialMuar');
+    //////// Transferências de Muares ////////
+    Route::get('/muar/transferencia', [App::class, 'transferenciaMuar'])->name('app.transferenciaMuar');
+    Route::get('/muar/transferencia/natural', [App::class, 'transferenciaNaturalMuar'])->name('app.transferenciaNaturalMuar');
+    Route::get('/muar/transferencia/artificial', [App::class, 'transferenciaArtificialMuar'])->name('app.transferenciaArtificialMuar');
+    
 
     Route::get('nascimento', [App::class, 'nascimento'])->name('app.nascimento');
     Route::get('transferencia', [App::class, 'transferencia'])->name('app.transferencia');

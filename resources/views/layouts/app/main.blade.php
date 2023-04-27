@@ -12,6 +12,7 @@
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('app/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
 </head>
 
 <body class="bg-gray-100">
