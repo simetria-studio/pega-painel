@@ -1,5 +1,5 @@
 @extends('layouts.app.main')
-
+@section('title', 'Comunicação de transferência de propriedade')
 @section('content')
     <div class="my-8">
         <div class="m-4 text-red-900">
@@ -10,16 +10,15 @@
                 </svg>
             </a>
         </div>
-        <div class="text-center my-8">
+        <div class="text-center m-8">
             <h1 class="text-center font-semibold text-xl">Comunicação de transferência de propriedade</h1>
         </div>
         <form>
-            <div class="flex flex-wrap justify-center  mx-8">
+            <div class="w-72 mx-auto ">
                 <div class="mb-3">
-                    <label>Selecionar meu animal:
+                    <label class="pl-1 text-sm font-medium">Selecionar meu animal:
                         <br>
-                        <select
-                            class="border-2 w-52 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
+                        <select class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
                             <option>Animal 1</option>
                             <option>Animal 2</option>
                             <option>Animal 3</option>
@@ -28,49 +27,48 @@
                 </div>
 
                 <div class="mb-3">
-                    <label>Nome do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">Nome do novo proprietário:
                         <br>
                         <input type="text"
-                            class="border-2 w-52 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
+                            class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
                     </label>
                 </div>
 
                 <div class="mb-3">
-                    <label>CPF/CNPJ do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">CPF/CNPJ do novo proprietário:
                         <br>
                         <input type="text"
-                            class="border-2 w-52 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
+                            class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
                     </label>
                 </div>
 
                 <div class="mb-3">
-                    <label>Endereço do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">Endereço do novo proprietário:
                         <br>
                         <input type="text"
-                            class="border-2 w-52 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
+                            class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
                     </label>
                 </div>
 
                 <div class="mb-3">
-                    <label>Observações:
+                    <label class="pl-1 text-sm font-medium">Observações:
                         <br>
-                        <textarea cols="16" rows="20"
-                            class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
-                                    </textarea>
+                        <textarea class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
+                        </textarea>
                     </label>
                 </div>
                 <div class="mb-3 text-center ">
-                    <label>Termos de contrato:
-                        <br>
-                        <input type="checkbox" id="termos" class="custom-checkbox mr-2" />
-                        <label for="termos" class="text-sm">
-                            Declaro que li e aceito os termos de contrato
-                        </label>
+                    <label class="text-lg font-medium">Termos de contrato:</label>
+                    <br>
+                    <label class="text-sm">
+                        <input type="checkbox" class="custom-checkbox mr-2" />
+                        Declaro que li e aceito os <a href="#" class="underline">termos de contrato</a>
                     </label>
+
                 </div>
                 <div class="mb-3">
                     <button type="button" id="enviar"
-                        class="bg-red-900 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                        class="w-full bg-red-900 hover:bg-red-700 text-white font-bold p-2.5 rounded">
                         Enviar
                     </button>
                 </div>

@@ -9,22 +9,20 @@
                 </svg>
             </a>
         </div>
-        <div class="grid place-items-center mx-8">
-            <div class="mb-5">
+        <div class="w-72 mx-auto">
+            <div class="text-center mb-5">
                 <h1 class="text-xl font-semibold">Alterar Categoria</h1>
             </div>
             <div>
                 <div class="text-center">
-                    <p class="mb-5">Eu, <strong class="text-red-700">Nome de usuário,</strong> contribuinte desejo alterar
-                        minha
-                        categoria
-                        para:</p>
+                    <p class="mb-5">Eu, <strong class="text-red-800">{{ Auth::user()->name }},</strong>
+                        contribuinte desejo alterar minha categoria para:
+                    </p>
                 </div>
-
                 <form action="">
                     <div class="radio-container mb-8 flex justify-center">
-                        <label for="radio">
-                            <input type="radio" id="radio" name="radio" />
+                        <label>
+                            <input type="radio" name="radio" />
                             <div class="custom-radio">
                                 <span></span>
                             </div>
@@ -32,8 +30,10 @@
                         </label>
                     </div>
                     <div class="flex justify-center">
-                        <button type="button" id="enviar"
-                            class="bg-red-900 hover:bg-red-800 active:bg-red-700 focus:outline-none focus:ring focus:ring-red-800 text-white p-2 rounded mx-2 w-24">Protocolar</button>
+                        <button type="submit" id="enviar"
+                            class="w-full text-lg font-bolder bg-red-900 hover:bg-red-800 active:bg-red-700 focus:outline-none focus:ring focus:ring-red-800 text-white p-2 rounded ">
+                            Protocolar
+                        </button>
                     </div>
                 </form>
 

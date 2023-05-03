@@ -1,5 +1,5 @@
 @extends('layouts.app.main')
-
+@section('title', 'Nascimento')
 @section('content')
     <div class="my-8">
         <div class="m-4 text-red-900">
@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <button type="button" id="protocolar"
-                        class="bg-red-800 text-white px-4 py-2 rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">
+                        class="w-full bg-red-800 text-white p-3 rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">
                         Protocolar
                     </button>
                 </div>

@@ -10,45 +10,44 @@
                 </svg>
             </a>
         </div>
-        <div class="grid place-items-center mx-8">
 
-            <div class="mb-5">
-                <h1 class="text-xl font-semibold">Escreva seu Comunicado</h1>
-            </div>
-            <form action="">
+        <div class="mb-5 text-center text-center">
+            <h1 class="text-xl font-medium">Escreva seu Comunicado</h1>
+        </div>
+        <form>
+            <div class="w-72 mx-auto">
                 <div class="mb-5">
-                    <label for="" class="text-lg"> Assunto:
+                    <label class="text-sm font-normal pl-1"> Assunto:
                         <br>
                         <input type="text"
-                            class="bg-zinc-100 p-1 border border-zinc-100 drop-shadow rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-600 focus:outline-none hover:border-red-600">
+                            class="bg-zinc-100 w-full p-2 border border-zinc-100 drop-shadow rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-600 focus:outline-none hover:border-red-600">
                     </label>
                 </div>
                 <div class="mb-5">
-                    <label for="" class="text-lg"> Mensagem:
+                    <label class="text-sm font-normal pl-1"> Mensagem:
                         <br>
-                        <textarea name="" id="" cols="30" rows="10"
-                            class="bg-zinc-100 p-1 border border-zinc-100 drop-shadow rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-600 focus:outline-none hover:border-red-600"></textarea>
+                        <textarea rows="5"
+                            class="bg-zinc-100 w-full p-2 border border-zinc-100 drop-shadow rounded-lg focus:ring-2 focus:ring-red-200 focus:border-red-600 focus:outline-none hover:border-red-600"></textarea>
                     </label>
                 </div>
 
                 <div>
-                    <button type="button" id="enviar"
-                        class="bg-red-800 w-32 text-white p-2 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-200 focus:ring-opacity-50">Enviar</button>
+                    <button type="submit" id="enviar"
+                        class="bg-red-800 w-full text-white p-2 text-lg font-bold rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-200 focus:ring-opacity-50">Enviar</button>
                 </div>
+            </div>
+        </form>
+    </div>
+@endsection
+@section('js')
+    <script>
+        $(document).on('click', '#enviar', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: 'Enviado com sucesso!',
 
-
-            </form>
-        </div>
-    @endsection
-    @section('js')
-        <script>
-            $(document).on('click', '#enviar', function() {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Sucesso!',
-                    text: 'Enviado com sucesso!',
-
-                })
-            });
-        </script>
-    @endsection
+            })
+        });
+    </script>
+@endsection
