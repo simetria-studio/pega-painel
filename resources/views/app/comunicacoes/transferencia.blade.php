@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="pl-1 text-sm font-medium">Nome do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">Nome do novo comprador:
                         <br>
                         <input type="text"
                             class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="pl-1 text-sm font-medium">CPF/CNPJ do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">CPF/CNPJ do novo comprador:
                         <br>
                         <input type="text"
                             class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="pl-1 text-sm font-medium">Endereço do novo proprietário:
+                    <label class="pl-1 text-sm font-medium">Endereço do novo comprador:
                         <br>
                         <input type="text"
                             class="border-2 w-full border-gray-300 bg-white p-2 rounded-lg focus:outline-none">
