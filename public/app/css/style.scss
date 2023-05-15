@@ -57,7 +57,8 @@ canvas {
         }
     }
 }
-.header-menu{
+
+.header-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -171,13 +172,31 @@ canvas {
     margin-top: 20px;
     margin: 0 20px;
 }
-.select-owner{
+
+.select-owner {
     margin: 50px 20px;
 }
 
 .new-span {
     width: 45%;
 }
-.header{
+
+.header {
     padding: 20px !important;
+}
+
+.animais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    margin-top: 20px;
+    .animais-info{
+        font-size: 0.8em;
+        font-weight: 700;
+    }
+    p {
+       font-size: 1em !important;
+    }
 }

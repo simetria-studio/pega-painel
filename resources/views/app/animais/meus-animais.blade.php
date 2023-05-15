@@ -44,7 +44,7 @@
                         <h1 class="text-xs font-normal">{{ $animal->id }}</h1>
                     </div>
                 </div>
-                <div class="card-main grid grid-cols-2 p-2">
+                <div class="card-main grid grid-cols-2 p-2 animais">
                     <div class="text-sm mx-auto">
                         <p>Reprodutor:</p>
                         <p>Reprodutora:</p>
@@ -53,7 +53,7 @@
                         {{-- <p>Tipo de reprodução:</p> --}}
                     </div>
 
-                    <div class="text-sm mx-auto">
+                    <div class="text-sm mx-auto animais-info">
                         <p>{{ $animal->getPai->nome_completo }}</p>
                         <p>{{ $animal->getMae->nome_completo }}</p>
                         <p>{{ $animal->data_nascimento }}</p>
