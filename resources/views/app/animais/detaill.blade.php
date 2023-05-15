@@ -35,6 +35,9 @@
             <a href="#">
                 <button class="btn btn-primary">LAUDOS</button>
             </a>
+            <a href="#">
+                <button class="btn btn-primary">EXPORTAR PDF</button>
+            </a>
         </div>
     </div>
 @endsection
