@@ -42,7 +42,11 @@ Route::middleware(['auth:admin'])->group(function () {
         route::get('animais', [DashboardController::class, 'animais'])->name('animais');
         route::get('consultar-animais', [AnimaisController::class, 'animais'])->name('consultar.animais');
         route::get('informacoes/{id}', [AnimaisController::class, 'show'])->name('informacoes.animal');
-        route::get('cadastrar', [DashboardController::class, 'cadastrarAnimal'])->name('cadastrar-animal');
+        route::get('cadastrar', [AnimaisController::class, 'cadastrarAnimal'])->name('cadastrar-animal');
+        Route::get('get-animais', [AnimaisController::class, 'getAnimais'])->name('get.animais');
+        Route::get('get-owners', [AnimaisController::class, 'getOwners'])->name('get.owners');
+        Route::get('get-fazenda', [AnimaisController::class, 'getFazenda'])->name('get.fazenda');
+        Route::post('store', [AnimaisController::class, 'store'])->name('animal.store');
     });
 
     Route::prefix('marks')->group(function () {
