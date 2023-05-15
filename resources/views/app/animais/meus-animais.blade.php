@@ -35,33 +35,37 @@
             </div>
         </form>
         @foreach ($animais as $animal)
-            <div class="card rounded-lg mx-5 my-4 bg-zinc-100 drop-shadow-2xl">
-                <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
-                    <div>
-                        <h1 class="text-sm font-semibold">{{ $animal->nome_completo }}</h1>
-                    </div>
-                    <div>
-                        <h1 class="text-xs font-normal">{{ $animal->id }}</h1>
-                    </div>
-                </div>
-                <div class="card-main grid grid-cols-2 animais">
-                    <div class="text-sm ">
-                        <p>Reprodutor:</p>
-                        <p>Reprodutora:</p>
-                        <p>Nascimento:</p>
-                        <p>Gênero:</p>
-                        {{-- <p>Tipo de reprodução:</p> --}}
+            <a href="{{ route('info.animal', $animal->id) }}">
+                <div class="card rounded-lg mx-5 my-4 bg-zinc-100 drop-shadow-2xl">
+                    <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
+                        <div>
+                            <h1 class="text-sm font-semibold">{{ $animal->nome_completo }}</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-xs font-normal">{{ $animal->id }}</h1>
+                        </div>
                     </div>
 
-                    <div class="text-sm  animais-info">
-                        <p>{{ $animal->getPai->nome_completo }}</p>
-                        <p>{{ $animal->getMae->nome_completo }}</p>
-                        <p>{{ $animal->data_nascimento }}</p>
-                        <p>{{ $animal->sexo }}</p>
-                        {{-- <p>Sêmen</p> --}}
+                    <div class="card-main grid grid-cols-2 animais" id="">
+                        <div class="text-sm ">
+                            <p>Reprodutor:</p>
+                            <p>Reprodutora:</p>
+                            <p>Nascimento:</p>
+                            <p>Gênero:</p>
+                            {{-- <p>Tipo de reprodução:</p> --}}
+                        </div>
+
+                        <div class="text-sm  animais-info">
+                            <p>{{ $animal->getPai->nome_completo }}</p>
+                            <p>{{ $animal->getMae->nome_completo }}</p>
+                            <p>{{ date('d/m/Y', strtotime($animal->data_nascimento)) }}</p>
+                            <p>{{ $animal->sexo }}</p>
+                            {{-- <p>Sêmen</p> --}}
+                        </div>
                     </div>
+
                 </div>
-            </div>
+            </a>
         @endforeach
     </div>
 @endsection

@@ -69,4 +69,9 @@ class Animal extends Model
     {
         return $this->hasOne(Pelagem::class, 'id', 'pelagem');
     }
+    public function getLivro()
+    {
+        return $this->hasOne(Livro::class, 'id', 'registro_livro');
+    }
+
 }

@@ -90,6 +90,7 @@ Route::middleware(['auth:web'])->group(function () {
 
     Route::get('animais', [App::class, 'animais'])->name('app.animais');
     Route::get('meus-animais', [AppAnimais::class, 'meusAnimais'])->name('app.meusAnimais');
+    Route::get('info-animal/{id}', [AppAnimais::class, 'animal'])->name('info.animal');
     Route::get('financeiro', [App::class, 'financeiro'])->name('app.financeiro');
 
 

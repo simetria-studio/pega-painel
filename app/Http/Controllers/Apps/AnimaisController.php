@@ -22,4 +22,19 @@ class AnimaisController extends Controller
 
         return view('app.animais.meus-animais', get_defined_vars());
     }
+
+    public function animal($id)
+    {
+        $animal = Animal::with(
+            'getPai',
+            'getMae',
+            'getOwner',
+            'getCreator',
+            'getFazenda',
+            'getPelagem',
+            'getLivro'
+        )->find($id);
+
+        return view('app.animais.detaill', get_defined_vars());
+    }
 }
