@@ -26,7 +26,7 @@
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/financeiro.png') }}" alt="" />
                 Financeiro
             </a>
-            @if (auth()->user()->permission == 5)
+            @if (auth()->user()->permission == 5 || auth()->user()->permission == 4)
                 <a href="{{ route('chose.owner') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                     <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/resenha.png') }}" alt="" />
                     Resenha
