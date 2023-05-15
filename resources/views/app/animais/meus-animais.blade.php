@@ -37,30 +37,36 @@
         @foreach ($animais as $animal)
             <a href="{{ route('info.animal', $animal->id) }}">
                 <div class="card rounded-lg mx-5 my-4 bg-zinc-100 drop-shadow-2xl">
-                    <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
+                    <div class="card-header rounded-t-lg flex py-2 px-5 justify-between border-b-2 border-red-900 drop-shadow-2xl">
                         <div>
-                            <h1 class="text-sm font-semibold">{{ $animal->nome_completo }}</h1>
+                            <h1 class="text-lg font-semibold capitalize">{{ $animal->nome_completo }}</h1>
                         </div>
                         <div>
-                            <h1 class="text-xs font-normal">{{ $animal->id }}</h1>
+                            <h1 class="text-lg font-semibold">{{ $animal->numero_chip }}</h1>
                         </div>
                     </div>
 
-                    <div class="card-main grid grid-cols-2 animais" id="">
-                        <div class="text-sm ">
+                    <div class="card-main flex py-2  animais" id="">
+                        <div class="text-sm font-medium ">
                             <p>Reprodutor:</p>
                             <p>Reprodutora:</p>
                             <p>Nascimento:</p>
                             <p>Gênero:</p>
-                            {{-- <p>Tipo de reprodução:</p> --}}
                         </div>
 
-                        <div class="text-sm  animais-info">
-                            <p>{{ $animal->getPai->nome_completo }}</p>
-                            <p>{{ $animal->getMae->nome_completo }}</p>
+                        <div class="text-sm  animais-info text-red-900">
+                            @empty($animal->getPai)
+                                <p>Não informado</p>
+                            @else
+                                <p class="capitalize">{{ $animal->getPai->nome_completo }}</p>
+                            @endempty
+                            @empty ($animal->getMae)
+                                <p>Não informada</p>
+                            @else
+                                <p>{{ $animal->getMae->nome_completo }}</p>
+                            @endempty
                             <p>{{ date('d/m/Y', strtotime($animal->data_nascimento)) }}</p>
-                            <p>{{ $animal->sexo }}</p>
-                            {{-- <p>Sêmen</p> --}}
+                            <p class="capitalize">{{ $animal->sexo }}</p>
                         </div>
                     </div>
 
