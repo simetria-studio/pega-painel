@@ -30,8 +30,8 @@
                         <div class="dados-pessoais">
                             <p class="mb-0">Email: <span>{{ $pessoa->email ?? 'Sem email' }}</span> </p>
                             <p class="mb-0">CPF/CNPJ: <span>{{ $pessoa->cpf }} {{ $pessoa->cnpj }}</span> </p>
-                            <p class="mb-0">CEP: <span>{{ $pessoa->getAdress->cep }}</span> </p>
-                            <p class="mb-0">Endereço: <span>{{ $pessoa->getAdress->endereco }}</span> </p>
+                            <p class="mb-0">CEP: <span>{{ $pessoa->getAdress->cep ?? '' }}</span> </p>
+                            <p class="mb-0">Endereço: <span>{{ $pessoa->getAdress->endereco ?? '' }}</span> </p>
                             <p class="mb-0">Telefone: <span> {{ $pessoa->whatsapp }}</span> </p>
                             <p class="">Atividade: <span>{{ $pessoa->status }}</span></p>
                         </div>

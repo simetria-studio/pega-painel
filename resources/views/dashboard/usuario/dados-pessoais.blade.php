@@ -75,19 +75,19 @@
                     <div class="col-4 mb-3">
                         <label for="cep" class="form-label">CEP</label>
                         <div class="rounded bg-light w-100 p-2" id="cep">
-                            <span>{{ $pessoa->getAdress->cep }}</span>
+                            <span>{{ $pessoa->getAdress->cep ?? '' }}</span>
                         </div>
                     </div>
                     <div class="col-4 mb-3">
                         <label for="estado" class="form-label">Estado</label>
                         <div class="rounded bg-light w-100 p-2" id="estado">
-                            <span>{{ $estado->nome }}</span>
+                            <span>{{ $estado->nome ?? '' }}</span>
                         </div>
                     </div>
                     <div class="col-4 mb-3">
                         <label for="cidade" class="form-label">Cidade</label>
                         <div class="rounded bg-light w-100 p-2" id="cidade">
-                            <span>{{ $pessoa->getAdress->cidade }}</span>
+                            <span>{{ $pessoa->getAdress->cidade ??'' }}</span>
                         </div>
                     </div>
                     <div class="col-4 mb-3">

@@ -34,142 +34,34 @@
                 </button>
             </div>
         </form>
+        @foreach ($animais as $animal)
+            <div class="card rounded-lg mx-5 my-4 bg-zinc-100 drop-shadow-2xl">
+                <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
+                    <div>
+                        <h1 class="text-sm font-semibold">{{ $animal->nome_completo }}</h1>
+                    </div>
+                    <div>
+                        <h1 class="text-xs font-normal">{{ $animal->id }}</h1>
+                    </div>
+                </div>
+                <div class="card-main grid grid-cols-2 p-2">
+                    <div class="text-sm mx-auto">
+                        <p>Reprodutor:</p>
+                        <p>Reprodutora:</p>
+                        <p>Nascimento:</p>
+                        <p>Gênero:</p>
+                        {{-- <p>Tipo de reprodução:</p> --}}
+                    </div>
 
-        <div class="card rounded-lg mx-5 my-4 bg-zinc-100 drop-shadow-2xl">
-            <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
-                <div>
-                    <h1 class="text-sm font-semibold">Cosmos</h1>
-                </div>
-                <div>
-                    <h1 class="text-xs font-normal">000001</h1>
-                </div>
-            </div>
-            <div class="card-main grid grid-cols-2 p-2">
-                <div class="text-sm mx-auto">
-                    <p>Reprodutor:</p>
-                    <p>Reprodutora:</p>
-                    <p>Nascimento:</p>
-                    <p>Gênero:</p>
-                    <p>Tipo de reprodução:</p>
-                </div>
-
-                <div class="text-sm mx-auto">
-                    <p>Artur</p>
-                    <p>Cometa</p>
-                    <p>2022</p>
-                    <p>Macho</p>
-                    <p>Sêmen</p>
+                    <div class="text-sm mx-auto">
+                        <p>{{ $animal->getPai->nome_completo }}</p>
+                        <p>{{ $animal->getMae->nome_completo }}</p>
+                        <p>{{ $animal->data_nascimento }}</p>
+                        <p>{{ $animal->sexo }}</p>
+                        {{-- <p>Sêmen</p> --}}
+                    </div>
                 </div>
             </div>
-            <div class="card-galery">
-                <div class="grid grid-cols-3 gap-3 p-3">
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-1.png') }}" alt="" />
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-2.png') }}" alt="" />
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-3.png') }}" alt="" />
-                </div>
-                <div class="flex justify-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="flex list-style-none">
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 focus:shadow-none"
-                                    href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&lt;</span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#" aria-label="Next">
-                                    <span aria-hidden="true">&gt;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class="card rounded-lg mx-5 my-8 drop-shadow-2xl bg-zinc-100">
-            <div class="card-header rounded-t-lg flex p-2 justify-around border-b-2 border-red-900 drop-shadow-2xl">
-                <div>
-                    <h1 class="text-sm font-semibold">Cosmos</h1>
-                </div>
-                <div>
-                    <h1 class="text-xs font-normal">000002</h1>
-                </div>
-            </div>
-            <div class="card-main grid grid-cols-2 p-2">
-                <div class="text-sm mx-auto">
-                    <p>Reprodutor:</p>
-                    <p>Reprodutora:</p>
-                    <p>Nascimento:</p>
-                    <p>Gênero:</p>
-                    <p>Tipo de reprodução:</p>
-                </div>
-
-                <div class="text-sm mx-auto">
-                    <p>Artur</p>
-                    <p>Cometa</p>
-                    <p>2022</p>
-                    <p>Macho</p>
-                    <p>Sêmen</p>
-                </div>
-            </div>
-            <div class="card-galery">
-                <div class="grid grid-cols-3 gap-3 p-3">
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-1.png') }}" alt="" />
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-2.png') }}" alt="" />
-                    <img class="rounded-lg" src="{{ asset('app/img/avatar-3.png') }}" alt="" />
-                </div>
-                <div class="flex justify-center  ">
-                    <nav aria-label="Page navigation example  ">
-                        <ul class="flex list-style-none">
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 focus:shadow-none"
-                                    href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&lt;</span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-1 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-red-900 hover:bg-gray-200 focus:shadow-none"
-                                    href="#" aria-label="Next">
-                                    <span aria-hidden="true">&gt;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection

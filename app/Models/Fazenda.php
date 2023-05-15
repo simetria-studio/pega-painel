@@ -10,4 +10,11 @@ class Fazenda extends Model
     use HasFactory;
 
     protected $table = 'srg_pessoa_fazenda';
+
+    protected $fillable = [
+        'pessoa',
+        'nome',
+        'cidade',
+        'estado',
+    ];
 }

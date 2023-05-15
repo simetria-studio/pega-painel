@@ -20,13 +20,14 @@ Auth::routes();
 Route::post('admin/login', [AdAuthController::class, 'login'])->name('admin.login.post');
 
 Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/painel', [HomeController::class, 'index'])->name('home');
+    Route::get('painel', [HomeController::class, 'index'])->name('home');
     route::get('comunicacao', [DashboardController::class, 'comunicacao'])->name('comunicacao');
-    route::get('cadastrar', [DashboardController::class, 'cadastrar'])->name('cadastrar');
+    route::get('cadastrar', [PessoasController::class, 'create'])->name('cadastrar');
     route::get('ecommerce', [DashboardController::class, 'ecommerce'])->name('ecommerce');
     route::get('usuario', [PessoasController::class, 'index'])->name('usuario');
 
     Route::get('criar-user', [AuthController::class, 'create'])->name('user.create');
+    Route::post('user-store', [PessoasController::class, 'createUser'])->name('user.store');
 
     route::prefix('owners')->group(function () {
         route::get('user-animais/{id}', [PessoasController::class, 'animais'])->name('user.animais');
@@ -52,6 +53,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('update/{id}', [MarkController::class, 'update'])->name('mark.update');
         Route::delete('destroy/{id}', [MarkController::class, 'destroy'])->name('mark.destroy');
     });
+
 
     route::get('anuncio', [DashboardController::class, 'anuncio'])->name('anuncio');
     route::get('permissoes', [DashboardController::class, 'permissoes'])->name('permissoes');

@@ -70,7 +70,7 @@
                                 <a class="nav-link {{ Route::currentRouteName() === 'usuario' ? 'active' : '' }}"
                                     href="{{ route('usuario') }}">
                                     <span data-feather="users" class="align-text-bottom"></span>
-                                    Usuários
+                                    Pessoas
                                 </a>
                             </li>
                             <li class="nav-item">

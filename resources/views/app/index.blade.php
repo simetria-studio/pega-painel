@@ -5,7 +5,7 @@
 @section('content')
     <div class="my-10">
         <a href="{{ route('app.index') }}">
-            <img src="{{ asset('app/img/home.png') }}" class="mx-auto w-36 h-26 text-red-900"/>
+            <img src="{{ asset('app/img/home.png') }}" class="mx-auto w-36 h-26 text-red-900" />
         </a>
         <div class="flex justify-center my-8 text-lg font-medium">
             <p>
@@ -26,10 +26,12 @@
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/financeiro.png') }}" alt="" />
                 Financeiro
             </a>
-            <a href="{{ route('chose.owner') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
-                <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/resenha.png') }}" alt="" />
-                Resenha
-            </a>
+            @if (auth()->user()->permission == 5)
+                <a href="{{ route('chose.owner') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
+                    <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/resenha.png') }}" alt="" />
+                    Resenha
+                </a>
+            @endif
             <a href="{{ route('app.configuracoes') }}" class="rounded-2xl border-red-400 bg-red-900 p-4 w-full ">
                 <img class="mx-auto my-2 w-16 h-16" src="{{ asset('app/img/config.png') }}" alt="" />
                 Configurações
