@@ -47,6 +47,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('get-owners', [AnimaisController::class, 'getOwners'])->name('get.owners');
         Route::get('get-fazenda', [AnimaisController::class, 'getFazenda'])->name('get.fazenda');
         Route::post('store', [AnimaisController::class, 'store'])->name('animal.store');
+        Route::post('filtro', [AnimaisController::class, 'filtro'])->name('animal.filtro');
     });
 
     Route::prefix('marks')->group(function () {
@@ -118,7 +119,7 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('/muar/transferencia', [App::class, 'transferenciaMuar'])->name('app.transferenciaMuar');
     Route::get('/muar/transferencia/natural', [App::class, 'transferenciaNaturalMuar'])->name('app.transferenciaNaturalMuar');
     Route::get('/muar/transferencia/artificial', [App::class, 'transferenciaArtificialMuar'])->name('app.transferenciaArtificialMuar');
-    
+
 
     Route::get('nascimento', [App::class, 'nascimento'])->name('app.nascimento');
     Route::get('transferencia', [App::class, 'transferencia'])->name('app.transferencia');

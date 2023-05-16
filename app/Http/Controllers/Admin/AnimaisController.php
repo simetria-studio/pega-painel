@@ -75,4 +75,33 @@ class AnimaisController extends Controller
         $fazendas = Fazenda::where('pessoa', $request->id)->get();
         return response()->json($fazendas);
     }
+
+    public function filtro(Request $request)
+    {
+        if ($request->ajax()) {
+            $query = Animal::with([
+                'getPai',
+                'getMae',
+                'getOwner',
+                'getCreator',
+                'getFazenda',
+                'getPelagem'
+            ]);
+            // Indexar as colunas relevantes
+            $query->where(function ($q) use ($request) {
+                $q->where('nome_completo', 'like', '%' . $request->nome . '%');
+                $q->orWhereHas('getOwner', function ($ownerQuery) use ($request) {
+                    $ownerQuery->where('nome', 'like', '%' . $request->nome . '%');
+                });
+            });
+
+            // Limitar o número de resultados
+            $query->limit(100);
+
+            $animais = $query->get();
+
+            $view = view('dashboard.animais.includes.filter', compact('animais'))->render();
+            return response()->json([get_defined_vars()]);
+        }
+    }
 }

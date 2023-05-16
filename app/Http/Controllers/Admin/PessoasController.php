@@ -43,8 +43,21 @@ class PessoasController extends Controller
     public function filtro(Request $request)
     {
         if ($request->ajax()) {
-            $pessoas = Owner::with('getAdress')->where('nome', 'like', '%' . $request->nome . '%')->orWhere('cpf', 'like', '%' . $request->nome . '%')->orWhere('cnpj', 'like', '%' . $request->nome . '%')->get();
-            $view = view('dashboard.usuario.includes.filter', get_defined_vars())->render();
+            $query = Owner::with('getAdress');
+
+            // Indexar as colunas relevantes
+            $query->where(function ($q) use ($request) {
+                $q->where('nome', 'like', '%' . $request->nome . '%')
+                    ->orWhere('cpf', 'like', '%' . $request->nome . '%')
+                    ->orWhere('cnpj', 'like', '%' . $request->nome . '%');
+            });
+
+            // Limitar o número de resultados
+            $query->limit(100);
+
+            $pessoas = $query->get();
+
+            $view = view('dashboard.usuario.includes.filter', compact('pessoas'))->render();
             return response()->json([get_defined_vars()]);
         }
     }
