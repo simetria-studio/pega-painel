@@ -130,6 +130,7 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('alteracao-afixo', [App::class, 'alteracaoAfixo'])->name('app.alteracaoAfixo');
     Route::get('alteracao-categoria', [App::class, 'alteracaoCategoria'])->name('app.alteracaoCategoria');
     Route::get('baixa-associado', [App::class, 'baixaAssociado'])->name('app.baixaAssociado');
+    Route::get('app/solicitacoes', [App::class, 'solicitacoes'])->name('app.solicitacoes');
 });
 
 Route::get('app/login', [AuthController::class, 'loginPage'])->name('app.login');

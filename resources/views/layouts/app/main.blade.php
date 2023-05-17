@@ -47,7 +47,7 @@
                         <a class="text-gray-100" href="{{ route('app.financeiro') }}">Financeiro</a>
                     </li>
                     <li class="sidemenu__item">
-                        <a class="text-gray-100" href="#">Solicitações</a>
+                        <a class="text-gray-100" href="{{ route('app.solicitacoes') }}">Solicitações</a>
                     </li>
                     <li class="sidemenu__item">
                         <a class="text-gray-100" href="#">Carteira Associado</a>

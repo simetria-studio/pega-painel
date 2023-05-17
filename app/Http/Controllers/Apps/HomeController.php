@@ -193,4 +193,9 @@ class HomeController extends Controller
     {
         return view('app.comunicacoes.baixa-associado');
     }
+
+    public function solicitacoes()
+    {
+        return view('app.solicitacoes');
+    }
 }
