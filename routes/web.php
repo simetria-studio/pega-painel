@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PessoasController;
 use App\Http\Controllers\Apps\HomeController as App;
 use App\Http\Controllers\Admin\Auth\AdAuthController;
 use App\Http\Controllers\Apps\AnimaisController as AppAnimais;
+use App\Http\Controllers\Apps\CobricaoController;
 
 Auth::routes();
 
@@ -131,6 +132,9 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('alteracao-categoria', [App::class, 'alteracaoCategoria'])->name('app.alteracaoCategoria');
     Route::get('baixa-associado', [App::class, 'baixaAssociado'])->name('app.baixaAssociado');
     Route::get('app/solicitacoes', [App::class, 'solicitacoes'])->name('app.solicitacoes');
+
+    Route::get('app-get-animal', [CobricaoController::class, 'getAnimal'])->name('app.getAnimal');
+    Route::post('app-store-cobricao', [CobricaoController::class, 'store'])->name('app.storeCobricao');
 });
 
 Route::get('app/login', [AuthController::class, 'loginPage'])->name('app.login');
